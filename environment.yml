@@ -1,14 +1,12 @@
-name: change-this-to-repo-name
+name: stem-transfer-of-information
 channels:
   - conda-forge
 dependencies:
-  # add your dependencies below
-  # pinning versions if necessary 
   - python
   - numpy
   - scipy
   - h5py
-  # additionally, include these deps
+  - py4DSTEM
   - ipywidgets
   - matplotlib
   - ipympl

@@ -1,6 +1,5 @@
 ---
-title: 'Quickstart Template for Elemental Microscopy'
-short_title: EM Quickstart
+title: STEM Transfer of Information
 numbering:
   heading_2: false
 ---
