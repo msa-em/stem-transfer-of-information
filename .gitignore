@@ -1,6 +1,6 @@
 _build
 ~*.docx
-
+*.npy
 .ipynb_checkpoints/
 
 .DS_Store
