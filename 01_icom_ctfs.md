@@ -21,8 +21,8 @@ In [Figure 1](fig:annular_segmented_detectors) the contrast transfer function is
 
 
 :::{figure} #app:annular_segmented_detectors
-:label: fig:annular_segmented_detectors
 :name: fig_annular_segmented_detectors
+:width: 100%
 :placeholder: ./figures/icom_ctf_placeholder.png
 Contrast transfer function of iCOM with annular segmented detectors.
 :::
