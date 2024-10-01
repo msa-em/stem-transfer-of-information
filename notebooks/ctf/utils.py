@@ -66,6 +66,40 @@ def return_patch_indices(positions_px,roi_shape,obj_shape):
 
     return row, col
 
+def sum_patches_base(patches, positions_px, roi_shape, object_shape):
+    """ """
+    
+    x0 = np.round(positions_px[:, 0]).astype("int")
+    y0 = np.round(positions_px[:, 1]).astype("int")
+
+    x_ind = np.fft.fftfreq(roi_shape[0], d=1 / roi_shape[0]).astype("int")
+    y_ind = np.fft.fftfreq(roi_shape[1], d=1 / roi_shape[1]).astype("int")
+
+    flat_weights = patches.ravel()
+    indices = ((y0[:, None, None] + y_ind[None, None, :]) % object_shape[1]) + (
+        (x0[:, None, None] + x_ind[None, :, None]) % object_shape[0]
+    ) * object_shape[1]
+    
+    counts = np.bincount(
+        indices.ravel(), weights=flat_weights, minlength=np.prod(object_shape)
+    )
+    counts = np.reshape(counts, object_shape)
+    return counts
+
+def sum_patches(patches, positions_px, roi_shape, obj_shape):
+    """ """
+
+    if np.iscomplexobj(patches):
+        real = sum_patches_base(
+            patches.real, positions_px, roi_shape, obj_shape
+        )
+        imag = sum_patches_base(
+            patches.imag, positions_px, roi_shape, obj_shape
+        )
+        return real + 1.0j * imag
+    else:
+        return sum_patches_base(patches, positions_px, roi_shape, obj_shape)
+
 def simulate_data(complex_obj, probe_array, row, col):
     """ """
     arr = np.asarray(complex_obj,dtype=np.complex128)
