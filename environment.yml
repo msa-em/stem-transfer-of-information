@@ -6,7 +6,6 @@ dependencies:
   - numpy
   - scipy
   - h5py
-  - py4DSTEM
   - ipywidgets
   - matplotlib
   - ipympl
