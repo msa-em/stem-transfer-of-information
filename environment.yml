@@ -8,6 +8,7 @@ dependencies:
   - h5py
   - ipywidgets
   - matplotlib
+  - colorspacious
   - ipympl
   - jupyterlab
   - jupyterlab-myst
