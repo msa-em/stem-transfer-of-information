@@ -16,13 +16,12 @@ must have a potential, $V({\vec{r}})$, which is real-valued in real space and ha
 :::
 Performing a single-slice 4D-STEM simulation on this object allows us to apply various virtual detectors and use them to reconstruct the white noise object.
 The noise-normalised Fourier transform of the resulting reconstruction yields the 2D contrast transfer function of the phase retrieval technique with the specified detector. 
-In [Figure 1](fig:annular_segmented_detectors) the contrast transfer function is calculated for annular virtual detectors of the geometry shown on the left.
+In [](#fig:annular_segmented_detectors) the contrast transfer function is calculated for annular virtual detectors of the geometry shown on the left.
 
 
 
 :::{figure} #app:annular_segmented_detectors
-:name: fig_annular_segmented_detectors
-:width: 100%
+:label: fig:annular_segmented_detectors
 :placeholder: ./figures/icom_ctf_placeholder.png
 Contrast transfer function of iCOM with annular segmented detectors.
 :::
