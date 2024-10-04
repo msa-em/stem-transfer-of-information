@@ -60,7 +60,7 @@ def combined_images_rgb(list_of_arrays, vmin=0.02, vmax=0.98):
 
     return complex_to_rgb(complex_arr, vmin=vmin, vmax=vmax)
 
-def add_scalebar(ax, length, sampling, units, color="white"):
+def add_scalebar(ax, length, sampling, units, size_vertical=1, pad=0.5, color="white"):
     """ """
     if abs(1.0 - length*sampling) <= 1e-2:
         txt = units
@@ -72,11 +72,11 @@ def add_scalebar(ax, length, sampling, units, color="white"):
         length,
         txt,
         "lower right",
-        pad=0.5,
+        pad=pad,
         color=color,
         frameon=False,
         label_top=True,
-        size_vertical=1,
+        size_vertical=size_vertical,
     )
     ax.add_artist(bar)
     return ax
