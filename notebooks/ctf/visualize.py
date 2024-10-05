@@ -8,7 +8,9 @@ def histogram_scaling(array, vmin=0.02, vmax=0.98, normalize=True):
     """ Scales array by clipping values outside the `vmin` and `vmax` quantiles. """
     scaled_array = array.copy()
 
-    if np.isclose(np.max(scaled_array), np.min(scaled_array)):
+    if np.min(scaled_array) == 0.0 and np.max(scaled_array) == 0.0:
+        return array
+    elif np.isclose(np.max(scaled_array), np.min(scaled_array)):
         vmin = 0
         vmax = np.max(scaled_array)
     else:
