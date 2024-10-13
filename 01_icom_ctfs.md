@@ -1,5 +1,5 @@
 ---
-title: Transfer of Information
+title: Transfer of Information (iCOM)
 ---
 
 # Implementation of the white noise object
