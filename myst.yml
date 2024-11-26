@@ -59,6 +59,7 @@ project:
       #   - Writing - original draft
     - id: gvarnavides
       name: Georgios Varnavides
+      corresponding: true
       email: gvarnavides@berkeley.edu
       orcid: 0000-0001-8338-3323
       affiliations:
