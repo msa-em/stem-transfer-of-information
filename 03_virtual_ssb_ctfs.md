@@ -1,5 +1,8 @@
 ---
-title: Transfer of Information (Direct Ptycho)
+title: Transfer of Information for Segmented Direct Ptychography
+short_title: Direct Ptychography CTF
+numbering:
+  enumerator: 3
 ---
 
 :::{figure} #app:annular_segmented_ssb
