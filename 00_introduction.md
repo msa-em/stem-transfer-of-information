@@ -11,8 +11,12 @@ Still, some definitions multiply the CTF by the inverse error $\frac{\pi\vec{k}}
 In literature, both of these definitions are used interchangeably as the CTF, resulting in a rather confusing landscape in which to discuss contrast transfer of various STEM techniques. 
 
 
-In an attempt to better this, (cite Pete and others publishing on the DQE metric here) have implemented and thouroughly explained a metric of detector quantum efficiency (DQE). 
+In an attempt to better this, (cite Pete and others publishing on the DQE metric here) have implemented and thoroughly explained a metric of detector quantum efficiency (DQE). 
 
-Regardless of the metric and definition used to assess the contrast transfer of your detector and reconstruction method, the object being reconstructed should be a white noise object in order to fairly assess the transfer of information. 
+Regardless of the metric and definition used to assess the contrast transfer of your detector and reconstruction method, the object being reconstructed should contain information at all spatial frequencies equally in order to fairly assess the transfer of information.
+<!-- be a white noise object in order to fairly assess the transfer of information.  -->
 In this work, we implement a white noise object that has random phase and constant amplitude in Fourier space, whilst obeying the real-world constraint that it must be real in real-space. 
-We then perform a single-slice 4D-STEM simulation and apply virtual detectors to assess both the fully pixelated and segmented detector CTF for integrated center of mass (iCOM) phase reconstructions, direct ptychograpy (SSB), and iterative ptychography. 
+We then perform a single-slice 4D-STEM simulation and apply virtual detectors to assess both the fully pixelated and segmented detector CTF for integrated center of mass (iCOM) phase reconstructions, direct ptychography (SSB), and iterative ptychography. 
+An ideal phase retrieval technique would retrieve information at all spatial frequencies equally, meaning that the CTF would be unity everywhere. 
+The retrieval algorithm itself and the choice of detector may both contribute to the actual information transfer falling short of the ideal. 
+In the following, we investigate the best case limit for iCOM, iterative ptychography, and SSB ptychography, and how the use of annular segmented detectors impact the information transfer for these.
