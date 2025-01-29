@@ -16,10 +16,10 @@ project:
     binder:
       url: https://y2j74k9mn0bz.curvenote.dev/services/binder/
       repo: msa-em/stem-transfer-of-information
-  #  jupyter:
-  #    server:
-  #      url: 'http://localhost:8888'
-  #      token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
+  # jupyter:
+  #   server:
+  #     url: 'http://localhost:8888'
+  #     token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
   open_access: true
   license: CC-BY-4.0
   banner: banner.png
@@ -86,12 +86,26 @@ project:
   #     recipients:
   #       - cophus
   abbreviations:
+    STEM: scanning transmission electron microscopy
+    TEM: transmission electron microscope/y
+    HRTEM: high resolution transmission electron microscopy
     4D-STEM: four dimensional scanning transmission electron microscopy
+    CBED: convergent beam electron diffraction 
     FFT: fast Fourier transform
     HAADF: high angle annular dark field
-    HRTEM: high resolution transmission electron microscopy
+    ADF: annular dark field
+    ABF: annular bright field
+    BF: bright field
     M&M: Microscopy and Microanalysis
-    STEM: scanning transmission electron microscopy
     DPC: differential phase contrast
+    iDPC: integrated differential phase contrast
+    COM: center of mass
+    iCOM: integrated center of mass
+    SSB: single side-band (ptychography)
+    WDD: Wigner distribution deconvolution
+    OBF: optimum bright field
+    CTF: contrast transfer function
+    SNR: signal-to-noise ratio
+    DQE: detector quantum efficiency
 site:
   template: book-theme
