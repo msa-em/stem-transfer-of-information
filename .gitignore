@@ -1,6 +1,6 @@
 _build
 ~*.docx
-*.npy
+white_noise_amplitudes.npy
 .ipynb_checkpoints/
 __pycache__
 
