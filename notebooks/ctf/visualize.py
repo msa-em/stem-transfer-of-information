@@ -27,7 +27,8 @@ def histogram_scaling(array, vmin=0.02, vmax=0.98, normalize=True):
     scaled_array = np.where(scaled_array > vmax, vmax, scaled_array)
 
     if normalize:
-        scaled_array = (scaled_array - vmin) / vmax
+        scaled_array -= scaled_array.min()
+        scaled_array /= scaled_array.max()
 
     return scaled_array
 
