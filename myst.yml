@@ -2,14 +2,15 @@
 version: 1
 project:
   id: msa-em-stem-transfer-of-information-1
-  title: STEM Transfer of Information
-  description: Analytical and numerical studies of transfer of information in phase contrast STEM techniques.
-  # short_title: EM Quickstart
+  title: Evaluating the Transfer of Information in Phase Retrieval STEM Techniques
+  short_title: Transfer of Information in Phase Retrieval STEM
+  description: Evaluating the transfer of information in various phase retrieval STEM techniques using analytical and numerical methods.
   keywords:
     - Scanning transmission electron microscopy
     - Ptychography
-    - Differential phase contrast
-    - Contrast transfer functions
+    - Center of mass imaging
+    - Contrast transfer function
+    - Detective quantum efficiency
   github: https://github.com/msa-em/stem-transfer-of-information
   jupyter: true
 #  jupyter:
@@ -20,10 +21,7 @@ project:
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webp
-  date: 2024-09-29
-  history:
-    submitted: 2023-08-27
-    published: 2024-08-27
+  date: 2025-04-10
   requirements:
     - 'environment.yml'
   resources:
@@ -46,13 +44,68 @@ project:
           institution: Trinity College Dublin
           address: College Green, Dublin 2
           ror: 02tyrky19
-      # roles:
-      #   - Conceptualization
-      #   - Funding acquisition
-      #   - Project administration
-      #   - Supervision
-      #   - Visualization
-      #   - Writing - original draft
+      roles:
+        - Conceptualization
+        - Data curation
+        - Formal analysis
+        - Investigation
+        - Methodology
+        - Software
+        - Validation
+        - Visualization
+        - Writing - original draft
+        - Writing - review & editing
+    - id: steph
+      name: Stephanie Ribet
+      orcid: 0000-0002-7117-066X
+      affiliations:
+        - id: ncem
+          department: National Center for Electron Microscopy, Molecular Foundry
+          institution: Lawrence Berkeley National Laboratory
+          address: 1 Cyclotron Road, Berkeley, CA, USA, 94720
+          ror: 02jbv0t02
+      roles:
+        - Validation
+        - Writing - review & editing
+    - id: mary
+      name: Mary C Scott
+      orcid: 0000-0002-9543-6725
+      affiliations:
+        - ncem
+        - id: ucb
+          department: Department of Materials Science
+          institution: University of California, Berkeley
+          address: 316 Hearst Memorial Mining, Berkeley, CA, USA, 94720
+          ror: 01an7q238
+      roles:
+        - Funding acquisition
+        - Project administration
+        - Supervision
+        - Writing - review & editing
+    - id: lewys
+      name: Lewys Jones
+      orcid: 0000-0002-6907-0731
+      affiliations: [tcd]
+      roles:
+        - Funding acquisition
+        - Project administration
+        - Supervision
+        - Writing - review & editing
+    - id: colin
+      name: Colin Ophus
+      orcid: 0000-0003-2348-8558
+      affiliations:
+        - ncem
+        - id: stanford
+          department: Department of Materials Science
+          institution: Stanford University
+          address: 496 Lomita Mall, Suite 102, Stanford, CA 94305
+          ror: 00f54p054
+      roles:
+        - Funding acquisition
+        - Project administration
+        - Supervision
+        - Writing - review & editing
     - id: gvarnavides
       name: Georgios Varnavides
       corresponding: true
@@ -64,35 +117,53 @@ project:
           institution: University of California, Berkeley
           address: 468 Donner Lab, Berkeley, CA, USA, 94720
           ror: 01an7q238
-      # roles:
-      #   - Conceptualization
-      #   - Software
-      #   - Validation
-      #   - Visualization
-      #   - Writing - original draft
-  # funding:
-  #   - statement: We thank the Microscopy Society of America for sponsoring this project.
-  #     recipients:
-  #       - cophus
-  #       - gvarnavides
-  #   - statement: Work at the Molecular Foundry was supported by the Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231.
-  #     id: DE-AC02-05CH11231
-  #     sources:
-  #       - name: Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy
-  #     recipients:
-  #       - cophus
+        - ncem
+      roles:
+        - Conceptualization
+        - Data curation
+        - Formal analysis
+        - Investigation
+        - Methodology
+        - Software
+        - Validation
+        - Visualization
+        - Writing - original draft
+        - Writing - review & editing
+  funding:
+    - statement: Work at the Molecular Foundry was supported by the Office of Science, Office of Basic Energy Sciences, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231.
+      recipients:
+        - julie
+        - steph
+        - mary
+        - lewys
+        - colin
+        - gvarnavides
+    - statement: JMB and LJ acknowledge support from Research Ireland grant number 19/FFP/6813.
+      recipients:
+        - julie
+        - lewys
+    - statement: LJ acknowledges support from Royal Society and Research Ireland grant numbers URF/RI/191637 and 12/RC/2278_P2.
+      recipients:
+        - lewys
+    - statement: SMR and CO acknowledge support from the DOE Early Career Research Program.
+      recipients:
+        - steph
+        - colin
+    - statement: GV acknowledges support from the Miller Institute for Basic Research in Science.
+      recipients:
+        - gvarnavides
   abbreviations:
+    TEM: transmission electron microscopy
     STEM: scanning transmission electron microscopy
-    TEM: transmission electron microscope/y
     HRTEM: high resolution transmission electron microscopy
     4D-STEM: four dimensional scanning transmission electron microscopy
+    4DSTEM: four dimensional scanning transmission electron microscopy
     CBED: convergent beam electron diffraction 
     FFT: fast Fourier transform
     HAADF: high angle annular dark field
     ADF: annular dark field
     ABF: annular bright field
     BF: bright field
-    M&M: Microscopy and Microanalysis
     DPC: differential phase contrast
     iDPC: integrated differential phase contrast
     COM: center of mass
