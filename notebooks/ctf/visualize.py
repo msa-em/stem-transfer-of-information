@@ -39,7 +39,7 @@ def complex_to_rgb(array, vmin=0.02, vmax=0.98):
         np.abs(array), 
         vmin=vmin, 
         vmax=vmax, 
-        normalize=True
+        normalize=False
     ).clip(1e-16, 1)
     phase = np.angle(array)
 
