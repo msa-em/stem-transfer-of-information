@@ -1,6 +1,6 @@
 ---
 title: Integrated Center of Mass Imaging with a Pixelated Detector
-short_title: Pixelated iCOM CTF
+short_title: Pixelated iCOM
 numbering:
   enumerator: 2.%s
 label : pixelated_icom_page

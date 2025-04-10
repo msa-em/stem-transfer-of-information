@@ -174,5 +174,18 @@ project:
     CTF: contrast transfer function
     SNR: signal-to-noise ratio
     DQE: detector quantum efficiency
+  toc:
+    - file: index.md
+    - file: 00_introduction.md
+    - file: 01_analytical-ingredients.md
+    - title: Pixelated Detector CTFs
+      children:
+        - pattern: "*pixelated*.md"
+    - title: Segmented Detector CTFs
+      children:
+        - pattern: "*segmented*.md"
+    - title: Notebooks
+      children:
+        - pattern: notebooks/*.ipynb
 site:
   template: book-theme
