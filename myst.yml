@@ -32,6 +32,8 @@ project:
     - format: meca
   exclude:
     - README.md
+    - notebooks/icom-ssnr.ipynb
+    - notebooks/08_icom_snr.ipynb
   authors:
     - id: julie
       name: Julie Marie Bekkevold
@@ -177,15 +179,17 @@ project:
   toc:
     - file: index.md
     - file: 00_introduction.md
-    - file: 01_analytical-ingredients.md
-    - title: Pixelated Detector CTFs
+    - file: 01_analytical_ingredients.md
+    - title: Pixelated Detector CTF
       children:
         - pattern: "*pixelated*.md"
-    - title: Segmented Detector CTFs
+    - title: Segmented Detector CTF
       children:
         - pattern: "*segmented*.md"
+    - file: 10_upsampled_ssb.md
+    - file: 11_spectral_signal_to_noise.md
     - title: Notebooks
       children:
-        - pattern: notebooks/*.ipynb
+        - pattern: "notebooks/[0-9]*.ipynb"
 site:
   template: book-theme
