@@ -4,6 +4,4 @@ white_noise_amplitudes.npy
 .ipynb_checkpoints/
 __pycache__
 
-
 .DS_Store
-requirements.in

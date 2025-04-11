@@ -23,7 +23,9 @@ project:
   thumbnail: thumbnail.webp
   date: 2025-04-10
   requirements:
-    - 'environment.yml'
+    - 'Dockerfile'
+    - requirements.in
+#    - 'environment.yml'
   resources:
     - 'notebooks/**/*'
   references:
