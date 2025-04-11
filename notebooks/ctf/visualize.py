@@ -9,10 +9,11 @@ def histogram_scaling(array, vmin=0.02, vmax=0.98, normalize=True):
     scaled_array = array.copy()
 
     if np.min(scaled_array) == 0.0 and np.max(scaled_array) == 0.0:
-        return array
+        return scaled_array
     elif np.isclose(np.max(scaled_array), np.min(scaled_array)):
-        vmin = 0
-        vmax = np.max(scaled_array)
+        if normalize:
+            scaled_array /= scaled_array.max()
+        return scaled_array     
     else:
         vals = np.sort(scaled_array[~np.isnan(scaled_array)])
 
@@ -23,14 +24,14 @@ def histogram_scaling(array, vmin=0.02, vmax=0.98, normalize=True):
         vmin = vals[ind_vmin]
         vmax = vals[ind_vmax]
 
-    scaled_array = np.where(scaled_array < vmin, vmin, scaled_array)
-    scaled_array = np.where(scaled_array > vmax, vmax, scaled_array)
-
-    if normalize:
-        scaled_array -= scaled_array.min()
-        scaled_array /= scaled_array.max()
-
-    return scaled_array
+        scaled_array = np.where(scaled_array < vmin, vmin, scaled_array)
+        scaled_array = np.where(scaled_array > vmax, vmax, scaled_array)
+    
+        if normalize:
+            scaled_array -= scaled_array.min()
+            scaled_array /= scaled_array.max()
+    
+        return scaled_array
 
 
 def complex_to_rgb(array, vmin=0.02, vmax=0.98):
@@ -39,7 +40,7 @@ def complex_to_rgb(array, vmin=0.02, vmax=0.98):
         np.abs(array), 
         vmin=vmin, 
         vmax=vmax, 
-        normalize=False
+        normalize=True
     ).clip(1e-16, 1)
     phase = np.angle(array)
 
