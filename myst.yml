@@ -6,11 +6,13 @@ project:
   short_title: Transfer of Information in Phase Retrieval STEM
   description: Evaluating the transfer of information in various phase retrieval STEM techniques using analytical and numerical methods.
   keywords:
-    - Scanning transmission electron microscopy
-    - Ptychography
-    - Center of mass imaging
-    - Contrast transfer function
-    - Detective quantum efficiency
+    - scanning transmission electron microscopy
+    - direct and iterative ptychography
+    - pixelated and segmented detectors
+    - center of mass imaging
+    - contrast transfer function
+    - spectral signal-to-noise ratio
+    - detector quantum efficiency
   github: https://github.com/msa-em/stem-transfer-of-information
   jupyter: true
 #  jupyter:
