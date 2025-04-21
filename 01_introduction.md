@@ -11,6 +11,7 @@ label : introduction_page
 Add general STEM phase retrieval techniques intro.
 :::
 
+(stem_image_formation)=
 ## STEM Image Formation
 
 The electron wavefunction of a converged electron probe exiting a thin sample is given by [@https://doi.org/chsgqd]:
@@ -41,6 +42,7 @@ I_{j,\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D_j(\bm{
 :::
 where $D_j(\bm{k})$ is the detector response function for the j<sup>th</sup> segment or pixel.
 
+(stem_ctf)=
 ## Contrast Transfer Functions
 
 In general, the relationship between [](#probability-density-eq) and the sample phase is non-linear.
