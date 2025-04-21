@@ -63,8 +63,8 @@ where $\mathcal{L}(\bm{Q})$ is the complex-valued contrast transfer of informati
 In this work, we investigage the CTF as a function of the imaging system properties and provide quantitative comparisons between the efficiency of different phase retrieval methods.
 
 The manuscript is structured as follows: 
-- First, we introduce the components of the incoming illumination limiting the transfer of information for STEM measurements, namely the probe aperture and the aberrations surface.
-- We then investigate the effect of the reconstruction method in extracting this information for pixelated detectors, introducing analytical expressions for each method.
-- Next, we consider how robust the CTF is to acquisitions with few-pixel, segmented detectors. 
-- Motivated by our observations, we propose a direct ptychographic algorithm which combines tcBF and SSB, to achieve upsampled reconstructions without missing frequencies (CTF zero-crossings).
-- Finally, we consider the effect of Poisson-limited detectors and finite electron fluence, by introducing the spectral signal-to-noise (SSNR) method for statistically evaluating the transfer of information.
+First, we introduce the components of the incoming illumination limiting the transfer of information for STEM measurements, namely the probe aperture and the aberrations surface.
+We then investigate the effect of the reconstruction method in extracting this information for pixelated detectors, introducing analytical expressions for each method.
+Next, we consider how robust the CTF is to acquisitions with few-pixel, segmented detectors. 
+Motivated by our observations, we propose a direct ptychographic algorithm which combines tcBF and SSB, to achieve upsampled reconstructions without missing frequencies (CTF zero-crossings).
+Finally, we consider the effect of Poisson-limited detectors and finite electron fluence, by introducing the spectral signal-to-noise (SSNR) method for statistically evaluating the transfer of information.
