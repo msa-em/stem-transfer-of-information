@@ -181,7 +181,7 @@ project:
     SNR: signal-to-noise ratio
     DQE: detector quantum efficiency
   toc:
-    - file: index.md
+    - file: 00_index.md
     - file: 01_introduction.md
     - file: 02_analytical_ingredients.md
     - title: Pixelated Detector CTF
