@@ -34,12 +34,12 @@ J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) = \left| \psi^{\mathrm{det}}_{\bm{r}^
 :::
 where we have omitted the incoherent integrals resulting from the temporal and spatial partial coherence of the electron source [@https://doi.org/chsgqd].
 
-Finally, the intensity recorded for a specific detector segment or pixel is given by:
+Finally, the intensity recorded on a specific detector segment or pixel is given by:
 :::{math}
 :label: detector-intensity-eq
-I_{\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D(\bm{k})\, d\bm{k},
+I_{j,\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D_j(\bm{k})\, d\bm{k},
 :::
-where $D(\bm{k})$ is the detector response function for a specific segment or pixel.
+where $D_j(\bm{k})$ is the detector response function for the j<sup>th</sup> segment or pixel.
 
 ## Contrast Transfer Functions
 
@@ -50,13 +50,13 @@ For weak-phase objects which only scatter the incoming illumination weakly, and 
 T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}),
 :::
 then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase. 
-This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{\bm{Q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{Q}^{\prime}}\left[ I_{\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{Q}$:
+This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{Q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{Q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{Q}$:
 
 :::{math}
 :label: ctf-eq
-\tilde{I}_{\bm{Q}^{\prime}} = 2\, \tilde{\phi}(\bm{Q}) \times \mathcal{L}(\bm{Q}),
+\tilde{I}_{j,\bm{Q}^{\prime}} = 2\, \tilde{\phi}(\bm{Q}) \times \mathcal{L}_j(\bm{Q}),
 :::
-where $\mathcal{L}(\bm{Q})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
+where $\mathcal{L}_j(\bm{Q})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
 
 ## Article Outline
 
