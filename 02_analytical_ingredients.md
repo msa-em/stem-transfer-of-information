@@ -59,8 +59,21 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 
 ## Aberration surface widget
 
+Similarly, for axial illumination, $\bm{Q}^{\prime} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
+:::{math}
+:label: hrtem_ctf_eq
+\mathcal{L}_{\mathrm{HRTEM}}(\bm{Q}) = -\sin\left[\chi(\bm{Q})\right].
+:::
+
 :::{figure} #app:aberration_surface_widget
 :label: fig_aberration_surface_widget
 :placeholder: ./figures/aberrations_surface_placeholder.png
 Interactive figure showing the aberration surface for common low-order aberrations.
 :::
+
+[](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order coefficients, as well as provide the functionality to balance spherical aberration using the Scherzer defocus:
+:::{math}
+:label: scherzer_defocus_eq
+C_{1,0}^{\mathrm{sch.}} = \mathrm{sgn}\left\{C_{3,0}\right\} \sqrt{\frac{3}{2} \left| C_{3,0}\right| \lambda },
+:::
+where $\mathrm{sgn}\left\{\cdot\right\}$ denotes the sign of a real number.
