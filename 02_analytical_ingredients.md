@@ -2,7 +2,7 @@
 title: Analytical Framework for Contrast Transfer Functions in STEM Measurements
 short_title: Analytical CTF Framework
 numbering:
-  enumerator: 1.%s
+  enumerator: 2.%s
 label : analytical_framework_page
 ---
 

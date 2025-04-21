@@ -2,7 +2,7 @@
 title: Tilt-Corrected Bright-Field STEM with a Segmented Detector
 short_title: Segmented tcBF
 numbering:
-  enumerator: 8.%s
+  enumerator: 9.%s
 label : segmented_parallax_page
 ---
 

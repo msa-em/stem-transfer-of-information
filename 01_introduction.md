@@ -1,7 +1,7 @@
 ---
 title: Introduction
 numbering:
-  enumerator: 0.%s
+  enumerator: 1.%s
 label : introduction_page
 ---
 

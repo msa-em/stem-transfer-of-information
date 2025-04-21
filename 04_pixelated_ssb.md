@@ -2,7 +2,7 @@
 title: Direct Ptychography with a Pixelated Detector
 short_title: Pixelated SSB
 numbering:
-  enumerator: 3.%s
+  enumerator: 4.%s
 label : pixelated_ssb_page
 ---
 

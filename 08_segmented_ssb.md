@@ -2,7 +2,7 @@
 title: Direct Ptychography with a Segmented Detector
 short_title: Segmented SSB
 numbering:
-  enumerator: 7.%s
+  enumerator: 8.%s
 label : segmented_ssb_page
 ---
 

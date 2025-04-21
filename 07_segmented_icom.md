@@ -2,7 +2,7 @@
 title: Integrated Center of Mass Imaging with a Segmented Detector
 short_title: Segmented iCOM
 numbering:
-  enumerator: 6.%s
+  enumerator: 7.%s
 label : segmented_icom_page
 ---
 

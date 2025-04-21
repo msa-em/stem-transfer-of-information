@@ -2,7 +2,7 @@
 title: Tilt-Corrected Bright-Field STEM with a Pixelated Detector
 short_title: Pixelated tcBF
 numbering:
-  enumerator: 4.%s
+  enumerator: 5.%s
 label : pixelated_parallax_page
 ---
 

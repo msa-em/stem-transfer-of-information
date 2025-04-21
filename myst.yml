@@ -23,7 +23,7 @@ project:
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webp
-  date: 2025-04-10
+  date: 2025-04-20
   requirements:
     - 'Dockerfile'
     - requirements.in
@@ -182,16 +182,16 @@ project:
     DQE: detector quantum efficiency
   toc:
     - file: index.md
-    - file: 00_introduction.md
-    - file: 01_analytical_ingredients.md
+    - file: 01_introduction.md
+    - file: 02_analytical_ingredients.md
     - title: Pixelated Detector CTF
       children:
         - pattern: "*pixelated*.md"
     - title: Segmented Detector CTF
       children:
         - pattern: "*segmented*.md"
-    - file: 10_upsampled_ssb.md
-    - file: 11_spectral_signal_to_noise.md
+    - file: 11_upsampled_ssb.md
+    - file: 12_spectral_signal_to_noise.md
     - title: Notebooks
       children:
         - pattern: "notebooks/[0-9]*.ipynb"

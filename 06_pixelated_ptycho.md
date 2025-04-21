@@ -2,7 +2,7 @@
 title: Iterative Ptychography with a Pixelated Detector
 short_title: Pixelated iterative ptycho
 numbering:
-  enumerator: 5.%s
+  enumerator: 6.%s
 label : pixelated_ptycho_page
 ---
 
