@@ -7,6 +7,7 @@ label : segmented_parallax_page
 ---
 
 ## To-Dos
+
 - Discuss number of segments == number of vBFs
 
 :::{figure} #app:segmented_parallax
@@ -14,4 +15,3 @@ label : segmented_parallax_page
 :placeholder: ./figures/segmented_parallax_placeholder.png
 Effect of various detector geometries on the CTF for tcBF.
 :::
-

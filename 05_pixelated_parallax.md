@@ -7,6 +7,7 @@ label : pixelated_parallax_page
 ---
 
 ## To-Dos
+
 - Introduce analytical parallax CTF (aperture autocorrelation times aberration surface)
 
 :::{figure} #app:pixelated_parallax
@@ -15,4 +16,3 @@ label : pixelated_parallax_page
 Effect of various probe aberrations on the CTF for tcBF with a pixelated detector.
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
-

@@ -7,6 +7,7 @@ label : segmented_icom_page
 ---
 
 ## To-Dos
+
 - Introduce segmented detectors
 - Introduce analytical iCOM CTF (detector segment autocorrelation with complex-probe)
 - Discuss radial vs annular segments
@@ -17,4 +18,3 @@ label : segmented_icom_page
 :placeholder: ./figures/segmented_icom_placeholder.png
 Effect of various detector geometries on the CTF for iCOM imaging.
 :::
-

@@ -7,6 +7,7 @@ label : segmented_ptycho_page
 ---
 
 ## To-Dos
+
 - Discuss claims of super resolution?
 - Discuss benefits of radial segments
 
@@ -15,4 +16,3 @@ label : segmented_ptycho_page
 :placeholder: ./figures/segmented_iterative_ptycho_placeholder.png
 Effect of various detector geometries and iterations on the CTF for iterative ptychography.
 :::
-

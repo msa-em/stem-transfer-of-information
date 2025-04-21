@@ -11,7 +11,7 @@ label : introduction_page
 Add general STEM phase retrieval techniques intro.
 :::
 
-## STEM Image Formation 
+## STEM Image Formation
 
 The electron wavefunction of a converged electron probe exiting a thin sample is given by [@https://doi.org/chsgqd]:
 :::{math}
@@ -49,7 +49,7 @@ For weak-phase objects which only scatter the incoming illumination weakly, and 
 :label: weak-phase-taylor-exp-eq
 T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}),
 :::
-then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase. 
+then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
 This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{Q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{Q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{Q}$:
 
 :::{math}
@@ -62,9 +62,9 @@ where $\mathcal{L}_j(\bm{Q})$ is the complex-valued contrast transfer of informa
 
 In this work, we investigage the CTF as a function of the imaging system properties and provide quantitative comparisons between the efficiency of different phase retrieval methods.
 
-The manuscript is structured as follows: 
+The manuscript is structured as follows:
 First, we introduce the components of the incoming illumination limiting the transfer of information for STEM measurements, namely the probe aperture and the aberrations surface.
 We then investigate the effect of the reconstruction method in extracting this information for pixelated detectors, introducing analytical expressions for each method.
-Next, we consider how robust the CTF is to acquisitions with few-pixel, segmented detectors. 
+Next, we consider how robust the CTF is to acquisitions with few-pixel, segmented detectors.
 Motivated by our observations, we propose a direct ptychographic algorithm which combines tcBF and SSB, to achieve upsampled reconstructions without missing frequencies (CTF zero-crossings).
 Finally, we consider the effect of Poisson-limited detectors and finite electron fluence, by introducing the spectral signal-to-noise (SSNR) method for statistically evaluating the transfer of information.

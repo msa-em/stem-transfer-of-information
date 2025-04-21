@@ -7,6 +7,7 @@ label : pixelated_ssb_page
 ---
 
 ## To-Dos
+
 - Introduce analytical in-focus SSB CTF (double minus triple overlap area)
 - Introduce analytical out-of-focus SSB CTF (complex-valued gamma filter)
 
@@ -16,4 +17,3 @@ label : pixelated_ssb_page
 Effect of various probe aberrations on the CTF for SSB direct ptychography with a pixelated detector.
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
-

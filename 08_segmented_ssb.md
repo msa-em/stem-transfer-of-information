@@ -7,6 +7,7 @@ label : segmented_ssb_page
 ---
 
 ## To-Dos
+
 - Discuss OBF weights
 - Discuss how more annular/radial bins are important to capture aberrated trotters
 
@@ -15,4 +16,3 @@ label : segmented_ssb_page
 :placeholder: ./figures/segmented_ssb_placeholder.png
 Effect of detector geometries on the CTF for SSB direct ptychography.
 :::
-

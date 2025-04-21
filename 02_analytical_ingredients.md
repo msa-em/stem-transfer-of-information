@@ -7,6 +7,7 @@ label : analytical_framework_page
 ---
 
 ## To-Dos
+
 - Introduce the three components which determine all STEM-based CTFs:
   - aperture envelope
   - aberration surface
