@@ -72,7 +72,7 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
 :label: hrtem_ctf_eq
-\mathcal{L}_{\mathrm{HRTEM}}(\bm{Q}) = -\sin\left[\chi(\bm{Q})\right].
+\Im\left\{\mathcal{L}^{\mathrm{HRTEM}}(\bm{Q})\right\} = -\sin\left[\chi(\bm{Q})\right].
 :::
 
 :::{figure} #app:aberration_surface_widget

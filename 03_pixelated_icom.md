@@ -39,13 +39,14 @@ Inserting the COM detector components in [](#symmetric_asymmetric_correlations_e
 :::{math}
 :label: asymmetric_correlation_ctf
 \begin{aligned}
-\mathcal{L}_x(\bm{Q}) &= \left[\psi \star \psi \, k_x \right](\bm{Q}) - \left[\psi \, k_x \star \psi \right](\bm{Q}) \\
-\mathcal{L}_y(\bm{Q}) &= \left[\psi \star \psi \, k_y \right](\bm{Q}) - \left[\psi \, k_y \star \psi \right](\bm{Q}).
+\mathcal{L}_x^{\mathrm{COM}}(\bm{Q}) &= \left[\psi \star \psi \, Q_x \right](\bm{Q}) - \left[\psi \, Q_x \star \psi \right](\bm{Q}) \\
+\mathcal{L}_y^{\mathrm{COM}}(\bm{Q}) &= \left[\psi \star \psi \, Q_y \right](\bm{Q}) - \left[\psi \, Q_y \star \psi \right](\bm{Q}).
 \end{aligned}
 :::
 
-:::{warning} To-Do:
-Add static image of $\mathcal{L}_x(\bm{Q})$ and $\mathcal{L}_y(\bm{Q})$.
+:::{figure} #app:pixelated_icom_static
+:label: fig_pixelated_icom_static
+Center of mass imaging component CTFs, and how they combine to give the scalar iCOM CTF, for an in-focus probe.
 :::
 
 ## Integrated Center of Mass Imaging
@@ -53,13 +54,13 @@ Add static image of $\mathcal{L}_x(\bm{Q})$ and $\mathcal{L}_y(\bm{Q})$.
 Following @complex_detector_ctf_eq, the vectorial CTF in @asymmetric_correlation_ctf can be combined to form a scalar CTF using the usual Fourier-integration method of obtain the integrated COM (iCOM) [@10.1016/bs.aiep.2017.01.006]:
 :::{math}
 :label: icom_ctf_eq
-\mathcal{L}(\bm{Q}) = \frac{Q_x \,  \mathcal{L}_x(\bm{Q}) + Q_y \,  \mathcal{L}_y(\bm{Q})}{\mathrm{i} \left|Q\right|^2}.
+\mathcal{L}^{\mathrm{iCOM}}(\bm{Q}) = \frac{Q_x \,  \mathcal{L}_x^{\mathrm{COM}}(\bm{Q}) + Q_y \,  \mathcal{L}_y^{\mathrm{COM}}(\bm{Q})}{\mathrm{i} \left|Q\right|^2}.
 :::
 
 Note that this reduces to the much simpler complex-probe auto-correlation expression:
 :::{math}
 :label: icom_ctf_autocorrelation_eq
-\mathcal{L}(\bm{Q}) = \left[\psi \star \psi \right](\bm{Q}).
+\Im\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{Q})\right\} = \left[\psi \star \psi \right](\bm{Q}).
 :::
 
 :::{figure} #app:pixelated_icom
