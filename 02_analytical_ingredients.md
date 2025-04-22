@@ -30,13 +30,13 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::{math}
 :label: symmetric_asymmetric_correlations_eq
 \begin{aligned}
-\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[ \psi \star \psi D_j \right](\bm{Q}) + \left[ \psi D_j \star \psi \right](\bm{Q}) \\
-\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[ \psi \star \psi D_j \right](\bm{Q}) - \left[ \psi D_j \star \psi \right](\bm{Q}),
+\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[\psi \star \psi \, D_j \right](\bm{Q}) + \left[\psi \, D_j \star \psi \right](\bm{Q}) \\
+\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[\psi \star \psi \, D_j \right](\bm{Q}) - \left[\psi \, D_j \star \psi \right](\bm{Q}),
 \end{aligned}
 :::
 where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
 
-## Aperture autocorrelation widget
+## Aperture Autocorrelation
 
 It is instructive to explore @complex_ctf_eq and @symmetric_asymmetric_correlations_eq for the ideal case of no aberrations, $\chi(\bm{k})=0$, a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, and a circular probe-forming aperture with convergence semiangle $k_0$ defined by:
 :::{math}
@@ -67,7 +67,7 @@ Interactive figure illustrating how the aperture autocorrelation function can be
 Notice [](#aperture_autocorrelation_eq) has support up to $2 q_{\mathrm{probe}}$ and is zero beyond that.
 With the exception of iterative ptychography, which we explore in-depth in [](pixelated_ptycho_page), all STEM phase-retrieval methods are limited by the aperture autocorrelation function.
 
-## Aberration surface widget
+## Aberration Surface
 
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}

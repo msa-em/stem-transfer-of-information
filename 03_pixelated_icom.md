@@ -6,18 +6,22 @@ numbering:
 label : pixelated_icom_page
 ---
 
-## Center of Mass Imaging
-
-One of the unique features of STEM over TEM phase retrieval techniques is that signal subtraction is possible, and as we will see desirable in some configurations, with a complicated detector geometry
+One of the unique features of STEM over TEM phase retrieval techniques is that signal subtraction is possible, and as we will see desirable in some configurations.
+For a complicated detector geometry
 :::{math}
 :label: complex_detector_eq
 D(\bm{k}) = \sum_j c_j D_j(\bm{k}),
 :::
-for real (possibly negative) coefficients $c_j$.
-The linearity of [](#complex_ctf_eq) suggests that similarly the CTF for a complicated geometry follows the relation:
+for real (possibly negative) coefficients $c_j$, the linearity of [](#complex_ctf_eq) suggests that the CTF for a complicated geometry follows the relation:
 :::{math}
 :label: complex_detector_ctf_eq
 \mathcal{L}(\bm{Q}) = \sum_j c_j \mathcal{L}_j(\bm{Q}).
+:::
+
+## Center of Mass Imaging
+
+:::{warning} To-Do:
+Add general COM intro.
 :::
 
 One popular detector geometry utilizing signal subtraction is differential phase contrast (DPC), or more generally center-of-mass (COM) imaging.
@@ -26,22 +30,37 @@ Here, the detector function is vectorial and proportional to the position on the
 :label: com_detector_eq
 \begin{aligned}
 \bm{D}(\bm{k})  &= \bm{k} \\
-                &= D_x(\bm{k}) \hat{k}_x + D_y(\bm{k}) \hat{k}_y,
+                &= k_x(\bm{k}) \hat{k}_x + k_y(\bm{k}) \hat{k}_y,
 \end{aligned}
 :::
 where $\hat{k}_x$ and $\hat{k}_y$ are unit-vectors on the detector plane along the x- and y-directions respectively.
 
-Inserting each detector component in [](#complex_ctf_eq), we obtain:
+Inserting the COM detector components in [](#symmetric_asymmetric_correlations_eq), we obtain the following CTFs:
 :::{math}
 :label: asymmetric_correlation_ctf
-\mathcal{L}_x(\bm{Q}) = 
+\begin{aligned}
+\mathcal{L}_x(\bm{Q}) &= \left[\psi \star \psi \, k_x \right](\bm{Q}) - \left[\psi \, k_x \star \psi \right](\bm{Q}) \\
+\mathcal{L}_y(\bm{Q}) &= \left[\psi \star \psi \, k_y \right](\bm{Q}) - \left[\psi \, k_y \star \psi \right](\bm{Q}).
+\end{aligned}
 :::
 
-## To-Dos
+:::{warning} To-Do:
+Add static image of $\mathcal{L}_x(\bm{Q})$ and $\mathcal{L}_y(\bm{Q})$.
+:::
 
-- Introduce analytical iCOM CTF (complex-probe autocorrelation)
-- Introduce test objects and CTF convolution
-- Discuss Scherzer defocus being suboptimal for iCOM
+## Integrated Center of Mass Imaging
+
+Following @complex_detector_ctf_eq, the vectorial CTF in @asymmetric_correlation_ctf can be combined to form a scalar CTF using the usual Fourier-integration method of obtain the integrated COM (iCOM) [@10.1016/bs.aiep.2017.01.006]:
+:::{math}
+:label: icom_ctf_eq
+\mathcal{L}(\bm{Q}) = \frac{Q_x \,  \mathcal{L}_x(\bm{Q}) + Q_y \,  \mathcal{L}_y(\bm{Q})}{\mathrm{i} \left|Q\right|^2}.
+:::
+
+Note that this reduces to the much simpler complex-probe auto-correlation expression:
+:::{math}
+:label: icom_ctf_autocorrelation_eq
+\mathcal{L}(\bm{Q}) = \left[\psi \star \psi \right](\bm{Q}).
+:::
 
 :::{figure} #app:pixelated_icom
 :label: fig_pixelated_icom
@@ -49,3 +68,10 @@ Inserting each detector component in [](#complex_ctf_eq), we obtain:
 Effect of various probe aberrations on the CTF for iCOM imaging with a pixelated detector.
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
+
+[](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for the lowest-order isotropic aberrations.
+Note that the CTF degrades quickly with increasing aberrations, hence iCOM is traditionally performed in-focus, and that the Scherzer defocus is not in-fact optimal for a specific chromatic aberration.
+This is not surprising, since the CTF does not exhibit the same zero-crossings as the HRTEM CTF.
+
+Finally, the right-most panel utilizes the linearity of the WPOA to convolve the resulting CTF with three sample potentials at various length-scales: i) a strontium titanate (STO) sample, ii) a metal-organic framework sample, and iii) an apoferritin protein sample.
+Note that at large defocii, the CTF can exhibit contrast reversals.
