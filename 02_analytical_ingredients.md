@@ -30,8 +30,8 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::{math}
 :label: symmetric_asymmetric_correlations_eq
 \begin{aligned}
-\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[\psi \star \psi \, D_j \right](\bm{Q}) + \left[\psi \, D_j \star \psi \right](\bm{Q}) \\
-\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[\psi \star \psi \, D_j \right](\bm{Q}) - \left[\psi \, D_j \star \psi \right](\bm{Q}),
+\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{Q}) + \left[\psi \, D_j \star \psi \right](\bm{Q}) \Bigr\} \\
+\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{Q}) - \left[\psi \, D_j \star \psi \right](\bm{Q}) \Bigr\},
 \end{aligned}
 :::
 where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
@@ -50,7 +50,7 @@ A(\bm{k}) = \begin{cases}
 In this case @symmetric_asymmetric_correlations_eq reduces to the aperture auto-correlation function:
 :::{math}
 :label: aperture_autocorrelation_eq
-\left[A \star A\right](\bm{k})  =  \Re\left\{
+\Im\left\{\mathcal{L}^{\mathrm{ideal}}(\bm{Q})\right\} = \left[A \star A\right](\bm{k})  =  \Re\left\{
   \mathcal{F}_{\bm{r} \rightarrow \bm{k}}^{-1} \left[ \left| \mathcal{F}_{\bm{k} \rightarrow \bm{r}} \left[ A(\bm{k}) \right] \right|^2 \right]
   \right\}.
 :::
@@ -72,7 +72,7 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
 :label: hrtem_ctf_eq
-\Im\left\{\mathcal{L}^{\mathrm{HRTEM}}(\bm{Q})\right\} = -\sin\left[\chi(\bm{Q})\right].
+\Im\left\{\mathcal{L}^{\mathrm{axial}}(\bm{Q})\right\} = -\sin\left[\chi(\bm{Q})\right].
 :::
 
 :::{figure} #app:aberration_surface_widget
