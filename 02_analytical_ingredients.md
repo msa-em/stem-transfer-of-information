@@ -13,39 +13,49 @@ For STEM measurements, the complex-valued CTF function, introduced in the [](ste
 :::{math}
 :label: complex_ctf_eq
 \begin{aligned}
-\mathcal{L}_j(\bm{Q}) = \frac{i}{2} \int A(\bm{Q}^{\prime}) D_j(\bm{Q}^{\prime}) & \left\{ A(\bm{Q}-\bm{Q}^{\prime}) \mathrm{e}^{-\mathrm{i}\left[\chi(\bm{Q} - \bm{Q}^{\prime}) - \chi(\bm{Q}^{\prime}) \right]} - \right. \\
-& \left.  \; \; A(\bm{Q}+\bm{Q}^{\prime}) \mathrm{e}^{\mathrm{i}\left[\chi(\bm{Q} + \bm{Q}^{\prime}) - \chi(\bm{Q}^{\prime}) \right]} \right\} d\bm{Q}^{\prime},
+\mathcal{L}_j(\bm{Q}) = \frac{i}{2} \int A(\bm{k}) D_j(\bm{k}) & \left\{ A(\bm{Q}-\bm{k}) \mathrm{e}^{-\mathrm{i}\left[\chi(\bm{Q} - \bm{k}) - \chi(\bm{k}) \right]} - \right. \\
+& \left.  \; \; A(\bm{Q}+\bm{k}) \mathrm{e}^{\mathrm{i}\left[\chi(\bm{Q} + \bm{k}) - \chi(\bm{k}) \right]} \right\} d\bm{k},
 \end{aligned}
 :::
-where $A(\bm{Q})$ is the probe-forming aperture and $\chi(\bm{Q})$ is the aberration surface.
-$A(\bm{Q})$ is a top-hat function normalized such that $\int A(\bm{Q})\, d\bm{Q} = 1$, and
+where $A(\bm{k})$ is the probe-forming aperture and $\chi(\bm{k})$ is the aberration surface.
+$A(\bm{k})$ is a top-hat function normalized such that $\int A(\bm{k})\, d\bm{k} = 1$, and
 :::{math}
 :label: chi_eq
-\chi(q,\theta) = \frac{2\pi}{\lambda} \sum_{n,m} \frac{1}{n+1} C_{n,m}(q \lambda)^{n+1} \, \cos \left[m (\theta - \theta_{n,m}) \right],
+\chi(k,\theta) = \frac{2\pi}{\lambda} \sum_{n,m} \frac{1}{n+1} C_{n,m}(k \lambda)^{n+1} \, \cos \left[m (\theta - \theta_{n,m}) \right],
 :::
-where $q=\left| \bm{Q}\right|$, $\theta = \arctan(\bm{Q})$, $\lambda$ is the electron wavelength, $n$ and $m$ are the radial and azimuthal orders of the aberration coefficients $C_{n,m}$, and $\theta_{n,m}$ is the aberration axis of non-isotropic coefficients.
+where $k=\left| \bm{k}\right|$, $\theta = \arctan(\bm{k})$, $\lambda$ is the electron wavelength, $n$ and $m$ are the radial and azimuthal orders of the aberration coefficients $C_{n,m}$, and $\theta_{n,m}$ is the aberration axis of non-isotropic coefficients.
+
+Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and asymmetric weighted cross-correlations of the complex-valued wavefunction $\psi(\bm{k}) = A(\bm{k})\mathrm{e}^{-\mathrm{i} \chi(\bm{k})}$ with the detector function:
+
+:::{math}
+:label: symmetric_asymmetric_correlations_eq
+\begin{aligned}
+\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[ \psi \star \psi D_j \right](\bm{Q}) + \left[ \psi D_j \star \psi \right](\bm{Q}) \\
+\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \left[ \psi \star \psi D_j \right](\bm{Q}) - \left[ \psi D_j \star \psi \right](\bm{Q}),
+\end{aligned}
+:::
+where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
 
 ## Aperture autocorrelation widget
 
-It is instructive to explore [](#complex_ctf_eq) for the ideal case of no aberrations, $\chi(\bm{Q})=0$, a pixelated detector sampled at Nyquist, $D_j(\bm{Q}) = \delta(\bm{Q})$, and a circular probe-forming aperture with convergence semiangle $q_0$ defined by:
+It is instructive to explore @complex_ctf_eq and @symmetric_asymmetric_correlations_eq for the ideal case of no aberrations, $\chi(\bm{k})=0$, a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, and a circular probe-forming aperture with convergence semiangle $k_0$ defined by:
 :::{math}
 :label: probe_forming_aperture_eq
-A(\bm{Q}) = \begin{cases}
-1 & \mathrm{if} \quad \left|\bm{Q}\right| \lt q_0 \\
+A(\bm{k}) = \begin{cases}
+1 & \mathrm{if} \quad \left|\bm{k}\right| \lt k_0 \\
 0 & \mathrm{otherwise}
 \end{cases}
 :::
 
-In this case, [](#complex_ctf_eq) reduces to the aperture auto-correlation function, which can be expressed compactly using Fourier transforms:
+In this case @symmetric_asymmetric_correlations_eq reduces to the aperture auto-correlation function:
 :::{math}
 :label: aperture_autocorrelation_eq
-\left[A \star A\right](\bm{Q})  =  \Re\left\{
-  \mathcal{F}_{\bm{r} \rightarrow \bm{Q}}^{-1} \left[ \left| \mathcal{F}_{\bm{Q} \rightarrow \bm{r}} \left[ A(\bm{Q}) \right] \right|^2 \right]
-  \right\},
+\left[A \star A\right](\bm{k})  =  \Re\left\{
+  \mathcal{F}_{\bm{r} \rightarrow \bm{k}}^{-1} \left[ \left| \mathcal{F}_{\bm{k} \rightarrow \bm{r}} \left[ A(\bm{k}) \right] \right|^2 \right]
+  \right\}.
 :::
-where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$ denotes the real-part of a complex-valued expression.
 
-Intuitively, [](#aperture_autocorrelation_eq) can be interperted as the "double overlap" area between the aperture and a shifted aperture centered at $\bm{Q}$.
+Intuitively, [](#aperture_autocorrelation_eq) can be interperted as the "double overlap" area between the aperture and a shifted aperture centered at $\bm{k}$.
 [](#fig_aperture_autocorrelation_widget) illustrates this interactively, as well as plot the radially-averaged aperture autocorrelation function.
 
 :::{figure} #app:aperture_autocorrelation_widget
@@ -59,7 +69,7 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 
 ## Aberration surface widget
 
-Similarly, for axial illumination, $\bm{Q}^{\prime} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
+Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
 :label: hrtem_ctf_eq
 \mathcal{L}_{\mathrm{HRTEM}}(\bm{Q}) = -\sin\left[\chi(\bm{Q})\right].
