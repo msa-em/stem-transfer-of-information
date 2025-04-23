@@ -36,10 +36,10 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::
 where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
 
-For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, @complex_ctf_eq reduces to:
+For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, the integrand of @complex_ctf_eq reduces to:
 :::{math}
 :label: ssb_gamma_eq
-\mathcal{L}(\bm{Q},\bm{k}) = \frac{i}{2} \Bigl\{ \psi^{\ast}(\bm{k}) \psi(\bm{Q}-\bm{k}) - \psi(\bm{k}) \psi^{\ast}(\bm{Q}+\bm{k})  \Bigr\},
+\Gamma_{\psi}(\bm{Q},\bm{k}) =  \psi^{\ast}(\bm{k}) \psi(\bm{Q}-\bm{k}) - \psi(\bm{k}) \psi^{\ast}(\bm{Q}+\bm{k}),
 :::
 which is known as the spatial-frequency dependent aperture-overlap function and encodes the phase interference between the first order diffracted beams and the direct beam [@10.1016/j.ultramic.2016.09.002].
 
