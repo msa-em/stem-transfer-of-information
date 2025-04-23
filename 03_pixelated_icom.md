@@ -57,11 +57,13 @@ Following @complex_detector_ctf_eq, the vectorial CTF in @asymmetric_correlation
 \mathcal{L}^{\mathrm{iCOM}}(\bm{Q}) = \frac{Q_x \,  \mathcal{L}_x^{\mathrm{COM}}(\bm{Q}) + Q_y \,  \mathcal{L}_y^{\mathrm{COM}}(\bm{Q})}{\mathrm{i} \left|Q\right|^2}.
 :::
 
-Note that this reduces to the much simpler complex-probe auto-correlation expression:
+Note that this reduces to the much simpler complex-valued wavefunction auto-correlation expression:
 :::{math}
 :label: icom_ctf_autocorrelation_eq
 \Im\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{Q})\right\} = \left[\psi \star \psi \right](\bm{Q}).
 :::
+
+[](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.
 
 :::{figure} #app:pixelated_icom
 :label: fig_pixelated_icom
@@ -69,8 +71,6 @@ Note that this reduces to the much simpler complex-probe auto-correlation expres
 Effect of various probe aberrations on the CTF for iCOM imaging with a pixelated detector.
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
-
-[](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for the lowest-order isotropic aberrations.
 
 Note that the CTF degrades quickly with increasing aberrations, hence iCOM is traditionally performed in-focus, and that the Scherzer defocus is not in-fact optimal for a specific chromatic aberration.
 This is not surprising, since the CTF does not exhibit the same zero-crossings as the HRTEM CTF.
