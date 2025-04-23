@@ -36,9 +36,16 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::
 where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
 
+For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, @complex_ctf_eq reduces to:
+:::{math}
+:label: ssb_gamma_eq
+\mathcal{L}(\bm{Q},\bm{k}) = \frac{i}{2} \Bigl\{ \psi^{\ast}(\bm{k}) \psi(\bm{Q}-\bm{k}) - \psi(\bm{k}) \psi^{\ast}(\bm{Q}+\bm{k})  \Bigr\},
+:::
+which is known as the spatial-frequency dependent aperture-overlap function and encodes the phase interference between the first order diffracted beams and the direct beam [@10.1016/j.ultramic.2016.09.002].
+
 ## Aperture Autocorrelation
 
-It is instructive to explore @complex_ctf_eq and @symmetric_asymmetric_correlations_eq for the ideal case of no aberrations, $\chi(\bm{k})=0$, a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, and a circular probe-forming aperture with convergence semiangle $k_0$ defined by:
+It is instructive to explore @complex_ctf_eq - @ssb_gamma_eq for the ideal case of no aberrations, $\chi(\bm{k})=0$, and a circular probe-forming aperture with convergence semiangle $k_0$ defined by:
 :::{math}
 :label: probe_forming_aperture_eq
 A(\bm{k}) = \begin{cases}
@@ -75,15 +82,15 @@ Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to 
 \Im\left\{\mathcal{L}^{\mathrm{axial}}(\bm{Q})\right\} = -\sin\left[\chi(\bm{Q})\right].
 :::
 
-:::{figure} #app:aberration_surface_widget
-:label: fig_aberration_surface_widget
-:placeholder: ./figures/aberrations_surface_placeholder.png
-Interactive figure showing the aberration surface for common low-order aberrations.
-:::
-
 [](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order coefficients, as well as provide the functionality to balance spherical aberration using the Scherzer defocus:
 :::{math}
 :label: scherzer_defocus_eq
 C_{1,0}^{\mathrm{sch.}} = \mathrm{sgn}\left\{C_{3,0}\right\} \sqrt{\frac{3}{2} \left| C_{3,0}\right| \lambda },
 :::
 where $\mathrm{sgn}\left\{\cdot\right\}$ denotes the sign of a real number.
+
+:::{figure} #app:aberration_surface_widget
+:label: fig_aberration_surface_widget
+:placeholder: ./figures/aberrations_surface_placeholder.png
+Interactive figure showing the aberration surface for common low-order aberrations.
+:::
