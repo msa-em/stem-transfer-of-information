@@ -71,8 +71,13 @@ The resulting CTF is shown on the left panel, with its radial average in the mid
 :::
 
 [](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for the lowest-order isotropic aberrations.
+
 Note that the CTF degrades quickly with increasing aberrations, hence iCOM is traditionally performed in-focus, and that the Scherzer defocus is not in-fact optimal for a specific chromatic aberration.
 This is not surprising, since the CTF does not exhibit the same zero-crossings as the HRTEM CTF.
 
-Finally, the right-most panel utilizes the linearity of the WPOA to convolve the resulting CTF with three sample potentials at various length-scales: i) a strontium titanate (STO) sample, ii) a metal-organic framework sample, and iii) an apoferritin protein sample.
+The right-most panel utilizes the linearity of the WPOA to convolve the resulting CTF with three sample potentials at various length-scales: i) a strontium titanate (STO) sample, ii) a metal-organic framework sample, and iii) an apoferritin protein sample.
 Note that at large defocii, the CTF can exhibit contrast reversals.
+
+Finally, it is interesting to note that analytical iCOM CTF suggests that the direct-component (DC) frequency is recovered exactly.
+This is incorrect, since only holographic techniques can recover the absolute phase of a sample, and highglights the main limitation of CTF analysis -- namely that it completely neglects finite electron fluence and Poisson-limited detector measurements.
+We remedy this point in [](#ssnr_page) where we introduce the spectral signal-to-noise (SSNR) statistical framework.
