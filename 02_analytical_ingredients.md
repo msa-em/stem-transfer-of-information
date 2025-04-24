@@ -30,11 +30,11 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::{math}
 :label: symmetric_asymmetric_correlations_eq
 \begin{aligned}
-\Re\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) + \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\} \\
-\Im\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) - \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\},
+\mathrm{Re}\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) + \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\} \\
+\mathrm{Im}\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) - \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\},
 \end{aligned}
 :::
-where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
+where $ \star $ denotes cross-correlation and $\mathrm{Re}\left\{\cdot\right\}$, $\mathrm{Im}\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
 
 For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, the integrand of @complex_ctf_eq reduces to:
 :::{math}
@@ -57,7 +57,7 @@ A(\bm{k}) = \begin{cases}
 In this case @symmetric_asymmetric_correlations_eq reduces to the aperture auto-correlation function:
 :::{math}
 :label: aperture_autocorrelation_eq
-\Im\left\{\mathcal{L}^{\mathrm{ideal}}(\bm{q})\right\} = \left[A \star A\right](\bm{k})  =  \Re\left\{
+\mathrm{Im}\left\{\mathcal{L}^{\mathrm{ideal}}(\bm{q})\right\} = \left[A \star A\right](\bm{k})  =  \mathrm{Re}\left\{
   \mathcal{F}_{\bm{r} \rightarrow \bm{k}}^{-1} \left[ \left| \mathcal{F}_{\bm{k} \rightarrow \bm{r}} \left[ A(\bm{k}) \right] \right|^2 \right]
   \right\}.
 :::
@@ -79,7 +79,7 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
 :label: hrtem_ctf_eq
-\Im\left\{\mathcal{L}^{\mathrm{axial}}(\bm{q})\right\} = -\sin\left[\chi(\bm{q})\right].
+\mathrm{Im}\left\{\mathcal{L}^{\mathrm{axial}}(\bm{q})\right\} = -\sin\left[\chi(\bm{q})\right].
 :::
 
 [](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order coefficients, as well as provide the functionality to balance spherical aberration using the Scherzer defocus:

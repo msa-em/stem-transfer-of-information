@@ -26,7 +26,7 @@ For completeness, we note in passing that for the ideal case of $\chi(\bm{k})=0$
 
 :::{math}
 :label: geometric_ssb_ctf_eq
-\mathcal{L}^{\mathrm{ideal \, SSB}}(\bm{q}) = \begin{cases} [A \star A](\bm{q}) - [A \star A](2\,\bm{q}) & if \left| \bm{q} \right| \lt q_0 \\
+\mathrm{Im}\left\{\mathcal{L}^{\mathrm{ideal \, SSB}}(\bm{q})\right\} = \begin{cases} [A \star A](\bm{q}) - [A \star A](2\,\bm{q}) & if \left| \bm{q} \right| \lt q_0 \\
 [A \star A](\bm{q}) & \mathrm{otherwise}
 \end{cases}
 :::

@@ -60,7 +60,7 @@ Following @complex_detector_ctf_eq, the vectorial CTF in @asymmetric_correlation
 Note that this reduces to the much simpler complex-valued wavefunction auto-correlation expression:
 :::{math}
 :label: icom_ctf_autocorrelation_eq
-\Im\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{q})\right\} = \left[\psi \star \psi \right](\bm{q}).
+\mathrm{Im}\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{q})\right\} = \left[\psi \star \psi \right](\bm{q}).
 :::
 
 [](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.

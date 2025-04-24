@@ -32,7 +32,7 @@ The tcBF CTF is then obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
 :::{math}
 :label: parallax_ctf_eq
 \begin{aligned}
-\Im\left\{\mathcal{L}^{tcBF}(\bm{q})\right\}  &= \int \Beta(\bm{q},\bm{k}) d\, \bm{k} \\
+\mathrm{Im}\left\{\mathcal{L}^{tcBF}(\bm{q})\right\}  &= \int \Beta(\bm{q},\bm{k}) d\, \bm{k} \\
                                               &= -\left[A \star A\right](\bm{q}) \sin\left[\chi(\bm{q})\right],
 \end{aligned}
 :::
