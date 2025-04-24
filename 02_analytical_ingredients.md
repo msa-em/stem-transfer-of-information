@@ -13,8 +13,8 @@ For STEM measurements, the complex-valued CTF function, introduced in the [](ste
 :::{math}
 :label: complex_ctf_eq
 \begin{aligned}
-\mathcal{L}_j(\bm{Q}) = \frac{i}{2} \int A(\bm{k}) D_j(\bm{k}) & \left\{ A(\bm{Q}-\bm{k}) \mathrm{e}^{-\mathrm{i}\left[\chi(\bm{Q} - \bm{k}) - \chi(\bm{k}) \right]} - \right. \\
-& \left.  \; \; A(\bm{Q}+\bm{k}) \mathrm{e}^{\mathrm{i}\left[\chi(\bm{Q} + \bm{k}) - \chi(\bm{k}) \right]} \right\} d\bm{k},
+\mathcal{L}_j(\bm{q}) = \frac{i}{2} \int A(\bm{k}) D_j(\bm{k}) & \left\{ A(\bm{q}-\bm{k}) \mathrm{e}^{-\mathrm{i}\left[\chi(\bm{q} - \bm{k}) - \chi(\bm{k}) \right]} - \right. \\
+& \left.  \; \; A(\bm{q}+\bm{k}) \mathrm{e}^{\mathrm{i}\left[\chi(\bm{q} + \bm{k}) - \chi(\bm{k}) \right]} \right\} d\bm{k},
 \end{aligned}
 :::
 where $A(\bm{k})$ is the probe-forming aperture and $\chi(\bm{k})$ is the aberration surface.
@@ -30,8 +30,8 @@ Equation [](#complex_ctf_eq) can be expressed more compactly using symmetric and
 :::{math}
 :label: symmetric_asymmetric_correlations_eq
 \begin{aligned}
-\Re\left\{\mathcal{L}_j(\bm{Q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{Q}) + \left[\psi \, D_j \star \psi \right](\bm{Q}) \Bigr\} \\
-\Im\left\{\mathcal{L}_j(\bm{Q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{Q}) - \left[\psi \, D_j \star \psi \right](\bm{Q}) \Bigr\},
+\Re\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) + \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\} \\
+\Im\left\{\mathcal{L}_j(\bm{q})\right\} & = \frac{1}{2} \Bigl\{ \left[\psi \star \psi \, D_j \right](\bm{q}) - \left[\psi \, D_j \star \psi \right](\bm{q}) \Bigr\},
 \end{aligned}
 :::
 where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\left\{\cdot\right\}$ denote the real and imaginary parts of complex-valued expressions respectively.
@@ -39,7 +39,7 @@ where $ \star $ denotes cross-correlation and $\Re\left\{\cdot\right\}$, $\Im\le
 For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, the integrand of @complex_ctf_eq reduces to:
 :::{math}
 :label: ssb_gamma_eq
-\Gamma_{\psi}(\bm{Q},\bm{k}) =  \psi^{\ast}(\bm{k}) \psi(\bm{Q}-\bm{k}) - \psi(\bm{k}) \psi^{\ast}(\bm{Q}+\bm{k}),
+\Gamma_{\psi}(\bm{q},\bm{k}) =  \psi^{\ast}(\bm{k}) \psi(\bm{q}-\bm{k}) - \psi(\bm{k}) \psi^{\ast}(\bm{q}+\bm{k}),
 :::
 which is known as the spatial-frequency dependent aperture-overlap function and encodes the phase interference between the first order diffracted beams and the direct beam [@10.1016/j.ultramic.2016.09.002].
 
@@ -57,7 +57,7 @@ A(\bm{k}) = \begin{cases}
 In this case @symmetric_asymmetric_correlations_eq reduces to the aperture auto-correlation function:
 :::{math}
 :label: aperture_autocorrelation_eq
-\Im\left\{\mathcal{L}^{\mathrm{ideal}}(\bm{Q})\right\} = \left[A \star A\right](\bm{k})  =  \Re\left\{
+\Im\left\{\mathcal{L}^{\mathrm{ideal}}(\bm{q})\right\} = \left[A \star A\right](\bm{k})  =  \Re\left\{
   \mathcal{F}_{\bm{r} \rightarrow \bm{k}}^{-1} \left[ \left| \mathcal{F}_{\bm{k} \rightarrow \bm{r}} \left[ A(\bm{k}) \right] \right|^2 \right]
   \right\}.
 :::
@@ -79,7 +79,7 @@ With the exception of iterative ptychography, which we explore in-depth in [](pi
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
 :label: hrtem_ctf_eq
-\Im\left\{\mathcal{L}^{\mathrm{axial}}(\bm{Q})\right\} = -\sin\left[\chi(\bm{Q})\right].
+\Im\left\{\mathcal{L}^{\mathrm{axial}}(\bm{q})\right\} = -\sin\left[\chi(\bm{q})\right].
 :::
 
 [](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order coefficients, as well as provide the functionality to balance spherical aberration using the Scherzer defocus:

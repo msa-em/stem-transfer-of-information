@@ -15,25 +15,25 @@ Add general parallax intro.
 The tilt-corrected BF STEM CTF can be understood by starting with the complex-valued aperture overlap function @ssb_gamma_eq, reproduced here for convenience:
 :::{math}
 :label: gamma_aperture_chi_eq
-\Gamma(\bm{Q},\bm{k}) = A(\bm{k})A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{Q}-\bm{k})}\mathrm{e}^{\mathrm{i}\chi(\bm{k})} - A(\bm{k})A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{Q}+\bm{k})}\mathrm{e}^{-\mathrm{i}\chi(\bm{k})}.
+\Gamma(\bm{q},\bm{k}) = A(\bm{k})A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q}-\bm{k})}\mathrm{e}^{\mathrm{i}\chi(\bm{k})} - A(\bm{k})A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q}+\bm{k})}\mathrm{e}^{-\mathrm{i}\chi(\bm{k})}.
 :::
 
 To proceed, we wish to factorize @gamma_aperture_chi_eq to read:
 :::{math}
 :label: gamma_factorization_eq
 \begin{aligned}
-\Gamma(\bm{Q},\bm{k}) &\approx \Beta(\bm{Q},\bm{k}) \mathrm{e}^{\mathrm{i}\nabla\chi \cdot \bm{k}} \\
-\Beta(\bm{Q},\bm{k}) &= A(\bm{k})\left(A(\bm{Q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{Q})} - A(\bm{Q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{Q})}\right),
+\Gamma(\bm{q},\bm{k}) &\approx \Beta(\bm{q},\bm{k}) \mathrm{e}^{\mathrm{i}\nabla\chi \cdot \bm{k}} \\
+\Beta(\bm{q},\bm{k}) &= A(\bm{k})\left(A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q})} - A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q})}\right),
 \end{aligned}
 :::
 where the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
 
-The tcBF CTF is then obtained by summing $\Beta(\bm{Q},\bm{k})$ over $\bm{k}$:
+The tcBF CTF is then obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
 :::{math}
 :label: parallax_ctf_eq
 \begin{aligned}
-\Im\left\{\mathcal{L}^{tcBF}(\bm{Q})\right\}  &= \int \Beta(\bm{Q},\bm{k}) d\, \bm{k} \\
-                                              &= -\left[A \star A\right](\bm{Q}) \sin\left[\chi(\bm{Q})\right],
+\Im\left\{\mathcal{L}^{tcBF}(\bm{q})\right\}  &= \int \Beta(\bm{q},\bm{k}) d\, \bm{k} \\
+                                              &= -\left[A \star A\right](\bm{q}) \sin\left[\chi(\bm{q})\right],
 \end{aligned}
 :::
 which we recognize as the axial CTF modulated by the aperture auto-correlation envelope.
@@ -54,15 +54,32 @@ This is often ameliorated using CTF "phase-flipping".
 
 ## Low-Order Approximation
 
-Note that @gamma_factorization_eq is only satisfied if we approximate the shifted aberration surface $\chi(\bm{Q} \pm \bm{k})$ with its Taylor expansion:
+Equation @gamma_factorization_eq is only satisfied if we approximate the shifted aberration surface $\chi(\bm{q} \pm \bm{k})$ with the first-order term of its Taylor expansion:
 :::{math}
 :label: shifted_chi_taylor_eq
-\chi(\bm{Q}\pm\bm{k}) = \chi(\bm{Q}) \pm \nabla \chi \cdot  \bm{k} + \frac{1}{2} \bm{k}^T H_{\chi} \bm{k} + \dots,
+\chi(\bm{q}\pm\bm{k}) = \chi(\bm{q}) \pm \nabla \chi(\bm{q})^T \cdot  \bm{k} + \frac{1}{2} \bm{k}^T \cdot H_{\chi}(\bm{q}) \cdot \bm{k} + \dots,
 :::
-where $H_{\chi}$ is the aberration surface Hessian.
+where $H_{\chi}(\bm{q})$ is the Hessian of the aberration surface.
 
-While @gamma_factorization_eq is only strictly true for aberration surfaces linear in $\bm{k}$, note that for aberration coefficients with a quadratic $\bm{k}$ dependence, such as defocus and astigmatism, the Hessian error introduced is independent of $\bm{Q}$ and thus cancels out in the full $\Gamma(\bm{Q},\bm{k})$ expression.
+Truncating @shifted_chi_taylor_eq after the gradient term yields an exact result when the aberration phase function $\chi(\bm{q})$ is quadratic in $\bm{q}$.
+This includes terms such as defocus and astigmatism, which are proportional to $q^2$, $q_x^2 - q_y^2$, and $2q_x q_y$.
+For such quadratic forms, the Hessian is constant and the second-order error term becomes independent of $\bm{q}$, contributing only a global, physically irrelevant phase shift in @gamma_factorization_eq.
+However, for higher-order aberration coefficients, such as coma and spherical aberration, @gamma_factorization_eq introduces non-trivial approximation errors which scale with $\bm{q}$ and increase for larger $\bm{k}$ support, reflecting the non-linear curvature of the aberration surface.
 
-:::{warning} To-Do:
-Add Hessian computation for defocus, stig, and coma?
+:::{table}
+:label: hessian_error_table
+:align: center
+
+Table summarizing the gradient, Hessian, and Hessian-induced error terms for common low-order aberration coefficients.
+Non-isotropic coefficients are expressed in Cartesian coordinates, and overall prefactors (e.g. $\pi \lambda$) have been omitted for clarity.
+
+| Coefficient | $ \chi(\bm{q}) $ | $ \nabla \chi(\bm{q})^T $ | $H_{\chi} (\bm{q})$ | Hessian-induced Error |
+| :---: | :---: | :----: | :----: | :----: |
+| $C_{1,0}$ | $q^2$ | $\begin{bmatrix} 2q_x \\ 2q_y \end{bmatrix}$ | $\begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$ | $k_x^2 + k_y^2$ |
+| $C_{1,2}^x$ | $q_x^2 - q_y^2$ | $\begin{bmatrix} 2q_x \\ -2q_y \end{bmatrix}$ | $\begin{bmatrix} 2 & 0 \\ 0 & -2 \end{bmatrix}$ | $k_x^2 - k_y^2$ |
+| $C_{1,2}^y$ | $2q_x q_y$ | $\begin{bmatrix} 2q_y \\ 2q_x \end{bmatrix}$ | $\begin{bmatrix} 0 & 2 \\ 2 & 0 \end{bmatrix}$ | $2k_x k_y$ |
+| $C_{2,1}^x$ | $q^2 q_x$ | $\begin{bmatrix} 3q_x^2 + q_y^2 \\ 2q_x q_y \end{bmatrix}$ | $\begin{bmatrix} \frac{6q_x^2 + q_y^2}{q} & \frac{3q_x q_y}{q} \\ \frac{3q_x q_y}{q} & \frac{q_x^2}{q} \end{bmatrix}$ | $\frac{q_x}{q}(k_x^2 + k_y^2) + 2\frac{q_y}{q}k_x k_y$ |
+| $C_{2,1}^y$ | $q^2 q_y$ | $\begin{bmatrix} 2q_x q_y \\ q_x^2 + 3q_y^2 \end{bmatrix}$ | $\begin{bmatrix} \frac{q_y^2}{q} & \frac{3q_x q_y}{q} \\ \frac{3q_x q_y}{q} & \frac{q_x^2 + 6q_y^2}{q} \end{bmatrix}$ | $\frac{q_y}{q}(k_x^2 + k_y^2) + 2\frac{q_x}{q}k_x k_y$ |
+| $C_{3,0}$ | $q^4$ | $\begin{bmatrix} 4q^2 q_x \\ 4q^2 q_y \end{bmatrix}$ | $\begin{bmatrix} 4(q^2 + 2q_x^2) & 8q_x q_y \\ 8q_x q_y & 4(q^2 + 2q_y^2) \end{bmatrix}$ | $q^2(k_x^2 + k_y^2) + 2(q_x k_x + q_y k_y)^2$ |
+
 :::

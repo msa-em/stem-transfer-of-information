@@ -15,7 +15,7 @@ D(\bm{k}) = \sum_j c_j D_j(\bm{k}),
 for real (possibly negative) coefficients $c_j$, the linearity of [](#complex_ctf_eq) suggests that the CTF for a complicated geometry follows the relation:
 :::{math}
 :label: complex_detector_ctf_eq
-\mathcal{L}(\bm{Q}) = \sum_j c_j \mathcal{L}_j(\bm{Q}).
+\mathcal{L}(\bm{q}) = \sum_j c_j \mathcal{L}_j(\bm{q}).
 :::
 
 ## Center of Mass Imaging
@@ -39,8 +39,8 @@ Inserting the COM detector components in [](#symmetric_asymmetric_correlations_e
 :::{math}
 :label: asymmetric_correlation_ctf
 \begin{aligned}
-\mathcal{L}_x^{\mathrm{COM}}(\bm{Q}) &= \left[\psi \star \psi \, Q_x \right](\bm{Q}) - \left[\psi \, Q_x \star \psi \right](\bm{Q}) \\
-\mathcal{L}_y^{\mathrm{COM}}(\bm{Q}) &= \left[\psi \star \psi \, Q_y \right](\bm{Q}) - \left[\psi \, Q_y \star \psi \right](\bm{Q}).
+\mathcal{L}_x^{\mathrm{COM}}(\bm{q}) &= \left[\psi \star \psi \, Q_x \right](\bm{q}) - \left[\psi \, Q_x \star \psi \right](\bm{q}) \\
+\mathcal{L}_y^{\mathrm{COM}}(\bm{q}) &= \left[\psi \star \psi \, Q_y \right](\bm{q}) - \left[\psi \, Q_y \star \psi \right](\bm{q}).
 \end{aligned}
 :::
 
@@ -54,13 +54,13 @@ Center of mass imaging component CTFs, and how they combine to give the scalar i
 Following @complex_detector_ctf_eq, the vectorial CTF in @asymmetric_correlation_ctf can be combined to form a scalar CTF using the usual Fourier-integration method of obtain the integrated COM (iCOM) [@10.1016/bs.aiep.2017.01.006]:
 :::{math}
 :label: icom_ctf_eq
-\mathcal{L}^{\mathrm{iCOM}}(\bm{Q}) = \frac{Q_x \,  \mathcal{L}_x^{\mathrm{COM}}(\bm{Q}) + Q_y \,  \mathcal{L}_y^{\mathrm{COM}}(\bm{Q})}{\mathrm{i} \left|Q\right|^2}.
+\mathcal{L}^{\mathrm{iCOM}}(\bm{q}) = \frac{Q_x \,  \mathcal{L}_x^{\mathrm{COM}}(\bm{q}) + Q_y \,  \mathcal{L}_y^{\mathrm{COM}}(\bm{q})}{\mathrm{i} \left|Q\right|^2}.
 :::
 
 Note that this reduces to the much simpler complex-valued wavefunction auto-correlation expression:
 :::{math}
 :label: icom_ctf_autocorrelation_eq
-\Im\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{Q})\right\} = \left[\psi \star \psi \right](\bm{Q}).
+\Im\left\{\mathcal{L}^{\mathrm{iCOM}}(\bm{q})\right\} = \left[\psi \star \psi \right](\bm{q}).
 :::
 
 [](#fig_pixelated_icom) plots @icom_ctf_autocorrelation_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.

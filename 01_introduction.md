@@ -52,13 +52,13 @@ For weak-phase objects which only scatter the incoming illumination weakly, and 
 T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}),
 :::
 then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
-This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{Q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{Q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{Q}^{\prime}$:
+This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{q}^{\prime}$:
 
 :::{math}
 :label: ctf-eq
-\tilde{I}_{j,\bm{Q}^{\prime}} = 2\, \tilde{\phi}(\bm{Q}^{\prime}) \times \mathcal{L}_j(\bm{Q}^{\prime}),
+\tilde{I}_{j,\bm{q}^{\prime}} = 2\, \tilde{\phi}(\bm{q}^{\prime}) \times \mathcal{L}_j(\bm{q}^{\prime}),
 :::
-where $\mathcal{L}_j(\bm{Q}^{\prime})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
+where $\mathcal{L}_j(\bm{q}^{\prime})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
 
 ## Article Outline
 

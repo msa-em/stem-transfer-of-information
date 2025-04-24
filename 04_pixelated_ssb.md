@@ -17,17 +17,17 @@ This suggests that its CTF is instead given by the non-zero regions of @ssb_gamm
 
 :::{math}
 :label: ssb_ctf_eq
-\mathcal{L}^{\mathrm{SSB}}(\bm{Q}) = \frac{\mathrm{i}}{2} \int  \left|\Gamma(\bm{Q},\bm{k}) \right| d\, \bm{k}.
+\mathcal{L}^{\mathrm{SSB}}(\bm{q}) = \frac{\mathrm{i}}{2} \int  \left|\Gamma(\bm{q},\bm{k}) \right| d\, \bm{k}.
 :::
 
-While the absolute value inside the integrand precludes a cleaner expression using correlation functions, which rely on linearity, @ssb_ctf_eq can be parallelized efficiently across spatial frequencies, $\bm{Q}$.
+While the absolute value inside the integrand precludes a cleaner expression using correlation functions, which rely on linearity, @ssb_ctf_eq can be parallelized efficiently across spatial frequencies, $\bm{q}$.
 
 For completeness, we note in passing that for the ideal case of $\chi(\bm{k})=0$, @ssb_ctf_eq reduces to the well-known geometric "double-minus-triple overlap" expression given by:
 
 :::{math}
 :label: geometric_ssb_ctf_eq
-\mathcal{L}^{\mathrm{ideal \, SSB}}(\bm{Q}) = \begin{cases} [A \star A](\bm{Q}) - [A \star A](2\,\bm{Q}) & if \left| \bm{Q} \right| \lt q_0 \\
-[A \star A](\bm{Q}) & \mathrm{otherwise}
+\mathcal{L}^{\mathrm{ideal \, SSB}}(\bm{q}) = \begin{cases} [A \star A](\bm{q}) - [A \star A](2\,\bm{q}) & if \left| \bm{q} \right| \lt q_0 \\
+[A \star A](\bm{q}) & \mathrm{otherwise}
 \end{cases}
 :::
 
@@ -41,6 +41,6 @@ The resulting CTF is shown on the left panel, with its radial average in the mid
 [](#fig_pixelated_ssb) plots @ssb_ctf_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.
 We note the following:
 
-* The CTF tends to zero for $\bm{Q} \rightarrow 0$ and $\bm{Q} \rightarrow 2\, q_{\mathrm{probe}}$, peaking in between.
+* The CTF tends to zero for $\bm{q} \rightarrow 0$ and $\bm{q} \rightarrow 2\, q_{\mathrm{probe}}$, peaking in between.
 * The CTF is purely positive, leading to no contrast reversals with thickness / aberrations.
 * Similar to iCOM, the Scherzer condition is suboptimal, since the CTF exhibits no zero-crossings.
