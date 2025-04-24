@@ -177,6 +177,7 @@ project:
     SSB: single side-band (ptychography)
     WDD: Wigner distribution deconvolution
     OBF: optimum bright field
+    tcBF: tilt-corrected bright field
     CTF: contrast transfer function
     SNR: signal-to-noise ratio
     DQE: detector quantum efficiency
