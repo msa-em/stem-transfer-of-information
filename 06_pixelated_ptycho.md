@@ -32,6 +32,10 @@ Following phase-retrieval on the simulated datasets, the CTF can be directly est
 \left|\mathcal{L}^{\mathrm{numerical}}(\bm{q}) \right| = \left| \mathcal{F}_{\bm{r} \rightarrow \bm{q}} \left[ \phi^{\prime}(\bm{r}) \right] \right|.
 :::
 
+:::{note} Note:
+All the analytical expressions presented in this article have been tested against numerical CTF calculations using white-noise objects defined using @white_noise_obj_eq and @numerical_ctf_eq.
+:::
+
 ## Iterative Ptychography CTF
 
 :::{figure} #app:pixelated_iterative_ptycho
