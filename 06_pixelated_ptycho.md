@@ -41,7 +41,10 @@ Effect of various probe aberrations and iterations on the CTF for iterative ptyc
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
 
-- Introduce need for numerical calculation
-- Introduce white-noise object
-- Discuss slow convergence of low spatial frequencies
-- Discuss similarities between SSB CTF and early ptycho iterations CTF
+[](#fig_pixelated_iterative_ptycho) plots @numerical_ctf_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.
+We note the following:
+
+* At early iterations (and non-zero $C_{1,0}$/$C_{3,0}$), the iterative ptychography CTF illustrates "Thon-like" oscillations.
+* With more iterations, the CTF approaches the ideal unity CTF, with all spatial frequencies recovered exactly.
+* Lower-spatial frequencies are slower to converge.
+* Iterative ptychography has super-resolution capabilities, as can be seen by the corners of the 2D CTF.
