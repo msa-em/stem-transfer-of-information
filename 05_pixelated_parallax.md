@@ -73,7 +73,7 @@ However, for higher-order aberration coefficients, such as coma and spherical ab
 Table summarizing the gradient, Hessian, and Hessian-induced error terms for common low-order aberration coefficients.
 Non-isotropic coefficients are expressed in Cartesian coordinates, and overall prefactors (e.g. $\pi \lambda$) have been omitted for clarity.
 
-| Coefficient | $ \chi(\bm{q}) $ | $ \nabla \chi(\bm{q})^T $ | $H_{\chi} (\bm{q})$ | Hessian-induced Error |
+| Coefficient | $ \chi(\bm{q}) $ | $ \nabla \chi(\bm{q})^T $ | $H_{\chi} (\bm{q})$ | Hessian-induced error |
 | :---: | :---: | :----: | :----: | :----: |
 | $C_{1,0}$ | $q^2$ | $\begin{bmatrix} 2q_x \\ 2q_y \end{bmatrix}$ | $\begin{bmatrix} 2 & 0 \\ 0 & 2 \end{bmatrix}$ | $k_x^2 + k_y^2$ |
 | $C_{1,2}^x$ | $q_x^2 - q_y^2$ | $\begin{bmatrix} 2q_x \\ -2q_y \end{bmatrix}$ | $\begin{bmatrix} 2 & 0 \\ 0 & -2 \end{bmatrix}$ | $k_x^2 - k_y^2$ |
