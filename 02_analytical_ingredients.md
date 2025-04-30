@@ -8,7 +8,7 @@ label : analytical_framework_page
 
 ## Contrast Transfer Function Ingredients
 
-For STEM measurements, the complex-valued CTF function, introduced in the [](stem_image_formation) and [](stem_ctf) sections, takes the form [@https://doi.org/chsgqd ; @https://doi.org/phzz]:
+For STEM measurements, the complex-valued CTF function, introduced in the [](#stem_image_formation) and [](#stem_ctf) sections, takes the form [@https://doi.org/chsgqd ; @https://doi.org/phzz]:
 
 :::{math}
 :label: complex_ctf_eq
@@ -72,7 +72,7 @@ Interactive figure illustrating how the aperture autocorrelation function can be
 :::
 
 Notice [](#aperture_autocorrelation_eq) has support up to $2 q_{\mathrm{probe}}$ and is zero beyond that.
-With the exception of iterative ptychography, which we explore in-depth in [](pixelated_ptycho_page), all STEM phase-retrieval methods are limited by the aperture autocorrelation function.
+With the exception of iterative ptychography, which we explore in-depth in [](#pixelated_ptycho_page), all STEM phase-retrieval methods are limited by the aperture autocorrelation function.
 
 ## Aberration Surface
 
