@@ -19,12 +19,17 @@ for real (possibly negative) coefficients $c_j$, the linearity of [](#complex_ct
 :::
 
 ## Center of Mass Imaging
+The goal of all phase imaging techniques is to retrieve the phase change obtained by the beam electrons from passing through the sample [@rose_nonstandard_1977]. 
+As stated previously, the gradient of these phase changes is proportional to the shift in the center of mass of the CBED pattern detected [@dekkers_differential_1974].
+The center of mass may be recorded directly from a pixelated detector image of the CBED pattern, or estimated using for example segmented detectors where opposing detector segments are subtracted yielding the differential phase contrast (DPC) signal.
+Both methods of estimating the COM signal enable us to recover the phase modulation applied to the beam by long range magnetic and electric fields [@chapman_direct_1978;@10.1016/j.ultramic.2012.03.020;@10.1038/srep10040], and the local electric field surrounding atomic nucleii [@shibata_differential_2012;@10.1038/nphys2357].
+Since the COM signal is proportional to the gradient of the electron wavefunction phase, the signal is typically integrated to retrieve the phase information. 
+This yields the integrated differential phase contrast (iDPC), or more generally iCOM, signal [@lazic_phase_2016;@10.1017/S1431927616002385].
+This characterisation method is highly sensitive to anything that modulates the electron beam phase, and offers contrast that is linear in atomic number. 
 
-:::{warning} To-Do:
-Add general COM intro.
-:::
 
-One popular detector geometry utilizing signal subtraction is differential phase contrast (DPC), or more generally center-of-mass (COM) imaging.
+<!-- One popular detector geometry utilizing signal subtraction is differential phase contrast (DPC), or more generally center-of-mass (COM) imaging [@10.1109/20.104427]. -->
+As previously mentioned, DPC utilizes signal subtraction for a segmented detector to estimate the COM shift of the CBED pattern [@10.1109/20.104427].
 Here, the detector function is vectorial and proportional to the position on the detector plane
 :::{math}
 :label: com_detector_eq

@@ -10,6 +10,13 @@ label : pixelated_parallax_page
 Add general parallax intro.
 :::
 
+A pixelated detector images the entire CBED pattern at every scan position, and thus the sum over all the detector pixels gives the BF image.
+Similarly, a sum of only a subset of the pixels inside the BF disk yields an incoherent BF image, similar to a monolithic BF or ABF detector. 
+Further, this is also true on a single pixel level, with the caveat that pixels outside the optic axis produce a shifted BF image in real space.
+This is equivalent to a TEM image with tilted illumination by the principle of reciprocity. 
+In tilt-corrected BF STEM, this is utilized by computationally aligning all of the tilted BF images back into one aligned BF image.
+By doing so, each virtual BF image is aligned to the optic axis and their mean now gives a much sharper, coherent BF image. 
+
 ## Tilt-Corrected BF STEM CTF
 
 The tilt-corrected BF STEM CTF can be understood by starting with the complex-valued aperture overlap function @ssb_gamma_eq, reproduced here for convenience:

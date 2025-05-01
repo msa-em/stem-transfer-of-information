@@ -10,6 +10,12 @@ label : pixelated_ssb_page
 Add general direct ptycho intro.
 :::
 
+The regions of the CBED pattern where the first diffracted beam overlaps with the direct beam contain phase information from the interference between the two beams.
+These double-overlap regions are therefore a source which may be utilized to extract the phase modulation applied on the beam electrons by the sample. 
+Since the expected phase difference between the direct and the first diffracted beam is $\pi$, any phase modulation differing from that may be attributed to the sample.
+Notably, the diffracted beam on both sides of the direct beam are equivalent, and only one of them should be used to retrieve the phase information, which gives rise to the name "single side-band" ptychography.
+<!-- Notably, the diffracted beam at $g$ and $-g$ are equivalent, and only one of them should be used to retrieve the phase information, which gives rise to the name "single side-band" ptychography. -->
+
 ## Direct Ptychography CTF
 
 In contrast to the detector response functions we have investigated so far, direct ptychography can utilize all the phase information in the complex-valued aperture-overlap function @ssb_gamma_eq.

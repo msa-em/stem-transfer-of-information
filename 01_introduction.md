@@ -7,9 +7,22 @@ label : introduction_page
 
 ## Phase Retrieval Methods
 
-:::{warning} To-Do:
-Add general STEM phase retrieval techniques intro.
-:::
+When the STEM electron beam traverses the sample the wavefunction of the electrons may be modulated in both phase and amplitude.
+The electron wavefunction contains all the information about the sample and the probe, including the aberration surface.
+However, since the electron wavefunction is complex, and the phase information is contained in its imaginary part, all of the phase information is lost upon detection by real detectors.
+This is because real detectors are only able to detect intensity variations, the absolute square of the electron wavefunction, and can not record complex information.
+Because a lot of the information we are typically interested in when imaging a sample is encoded in the phase of the electron wavefunction, this phase problem is a hindrance and numerous methods for retrieving the phase information have been developed.
+
+
+The simplest method is the center of mass (COM) method, which estimates the phase of the beam through its relation to the deflection of the COM of the CBED pattern.
+Specifically, this COM is proportional to the gradient of the phase, which means that the phase may be retrieved through integration of the COM signal, typically termed integrated center of mass (iCOM).
+Other methods retrieve the phase more explicitly from the redundant information in overlapping regions between the unscattered and scattered beams.
+Single side-band ptychography (SSB) is one such method, which retrieves the phase modulation applied to the beam by the sample by extracting any additional phase modulation than the expected from the double overlap regions of zeroth and first order diffraction disks. 
+Applying signal-to-noise optimising weights to the SSB phase reconstruction yields the optimum bright field (OBF) method. 
+These are direct phase retrieval methods, but it is also possible to retrieve the phase information iteratively by solving the inverse scattering problem of how the probe and object interact to produce the CBED patterns. 
+This is done by comparing a guess for the STEM probe to the recorded CBED patterns, which informs how the object must have modulated the probe and thus updates the object reconstruction and the probe guess.
+Performing this procedure iteratively, a solution for both the probe and the object may be found, and the only prior information used is that of how the probe and the object interact.
+
 
 (stem_image_formation)=
 ## STEM Image Formation

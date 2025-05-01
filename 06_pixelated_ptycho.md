@@ -10,6 +10,11 @@ label : pixelated_ptycho_page
 Add general iterative ptychography intro.
 :::
 
+The ptychographic methods that we have introduced so far, iCOM and SSB, are both direct ptychography methods, meaning that they retrieve the phase information directly from the diffraction pattern signal.
+But the redundancy of 4D dataset and overlapping regions of the CBED pattern also allow us to solve the inverse scattering problem to find the object and the probe that gave rise to the recorded diffraction patterns iteratively.
+Since we know the nature of the interaction between the probe and the sample, as well as the image formation in the far-field where the CBED patterns are recorded, the redundancy in the data set should be enough to find the unknown sample provided we have a good guess for the probe.
+This typically means that the aberration coefficients should be know, or estimated from the data.
+
 ## Numerical White-Noise Object
 
 Unfortunately, the iterative nature of iterative ptychography does not lend itself well to analytical CTF expressions like the ones derived in the previous sections.
