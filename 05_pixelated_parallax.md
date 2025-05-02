@@ -25,15 +25,20 @@ The tilt-corrected BF STEM CTF can be understood by starting with the complex-va
 \Gamma(\bm{q},\bm{k}) = A(\bm{k})A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q}-\bm{k})}\mathrm{e}^{\mathrm{i}\chi(\bm{k})} - A(\bm{k})A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q}+\bm{k})}\mathrm{e}^{-\mathrm{i}\chi(\bm{k})}.
 :::
 
-To proceed, we wish to factorize @gamma_aperture_chi_eq to read:
+<!-- To proceed, we wish to factorize @gamma_aperture_chi_eq to read: -->
+To proceed, we wish to factorize out the part containing the shifts needed to align the tilted BF images from @gamma_aperture_chi_eq.
+The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that we get
 :::{math}
 :label: gamma_factorization_eq
 \begin{aligned}
 \Gamma(\bm{q},\bm{k}) &\approx \Beta(\bm{q},\bm{k}) \mathrm{e}^{\mathrm{i}\nabla\chi \cdot \bm{k}} \\
-\Beta(\bm{q},\bm{k}) &= A(\bm{k})\left(A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q})} - A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q})}\right),
+\Beta(\bm{q},\bm{k}) &= A(\bm{k})\left(A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q})} - A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q})}\right).
 \end{aligned}
 :::
-where the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
+<!-- where the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements. -->
+Here, the term involving the gradient of the aberration surface, $\nabla \chi$, is the tilt-correction term.
+Essentially, this is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
+Since this tilt-correction term is ... it does not contribute to the CTF.
 
 The tcBF CTF is then obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
 :::{math}
@@ -57,7 +62,7 @@ We note the following:
 
 * Similar to HRTEM, the tcBF CTF features zero-crossings and thus contrast reversals.
 This is often ameliorated using CTF "phase-flipping".
-* Since the tcBF CTF shares the same zero-crossings as HRTEM, the Scherzer defocus is indeed the optimum configuration for a non-corrected microscope.
+* Since the tcBF CTF shares the same zero-crossings as HRTEM, the Scherzer defocus is indeed the optimum configuration for an uncorrected microscope.
 
 ## Low-Order Approximation
 
