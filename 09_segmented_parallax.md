@@ -6,9 +6,9 @@ numbering:
 label : segmented_parallax_page
 ---
 
-## To-Dos
-
+:::{warning} To-Do:
 - Discuss number of segments == number of vBFs
+:::
 
 :::{figure} #app:segmented_parallax
 :label: fig_segmented_parallax

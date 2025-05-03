@@ -6,10 +6,11 @@ numbering:
 label : segmented_ptycho_page
 ---
 
-## To-Dos
-
+:::{warning} To-Do:
 - Discuss claims of super resolution?
 - Discuss benefits of radial segments
+:::
+
 
 :::{figure} #app:segmented_iterative_ptycho
 :label: fig_segmented_iterative_ptycho
