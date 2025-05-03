@@ -14,7 +14,7 @@ By contrast, direct ptychography techniques, exhibit a purely positive CTF with 
 
 ## SSB split operator decomposition
 
-The aperture overlap function factorization we derived in [](#gamma_factorization_eq), $\Gamma(\bm{q},\bm{k}) \approx \Beta(\bm{q},\bm{k}) \mathrm{e}^{\mathrm{i\nabla_{\chi}\cdot\bm{k}}}$, suggests that the SSB phase-correction operator can be split into two parts:
+The aperture overlap function factorization we derived in [](#gamma_factorization_eq), $\Gamma(\bm{q},\bm{k}) \approx \Beta(\bm{q},\bm{k}) \mathrm{e}^{\mathrm{i\nabla_{\chi}\cdot\bm{k}}}$, suggests that the SSB phase-correction operator can be split into two parts (see [](#ssb_reconstruction_pseudocode)):
 
 1. Phase-correction for the effect of shifted apertures, using the $\Beta(\bm{q},\bm{k})$ kernel
 2. Sub-pixel shifting for the observed lateral vBF shifts, using the $\mathrm{e}^{\mathrm{i\nabla_{\chi}\cdot\bm{k}}}$ phase ramp,
@@ -73,7 +73,7 @@ $I_{\mathrm{BF}} = \left\{ I(\bm{r},\bm{k}) : \bm{k} \in K_{\mathrm{BF}} \right\
 
 - $G \leftarrow \mathcal{F}_{\bm{r}\rightarrow\bm{q}}[I_{\mathrm{BF}}[i]]$
 
-- $G^{\prime} \leftarrow$ tile $G$ to upsampled grid $\bm{k}$
+- $G^{\prime} \leftarrow \mathit{tile}(G)$ to upsampled grid $\bm{k}$
 
 - Construct shift operator:  
   $\Delta \leftarrow \exp\left(\mathrm{i} \bm{k} \cdot \Delta \bm{k}[i]\right)$
@@ -82,9 +82,9 @@ $I_{\mathrm{BF}} = \left\{ I(\bm{r},\bm{k}) : \bm{k} \in K_{\mathrm{BF}} \right\
   $\Beta \leftarrow e^{-i\chi(\bm{k})} A(\bm{k} - K_{\mathrm{BF}}[i]) - e^{i\chi (\bm{k})} A(\bm{k} + K_{\mathrm{BF}}[i])$
 
 - Update reconstruction:  
-  $\tilde{I} \mathrel{+}= \mathrm{Im}\left(\mathcal{F}^{-1}_{\bm{k} \rightarrow \bm{r}}\left[\frac{G^{\prime} \, \Delta \, \Beta^{\ast}}{\|\Beta\|}\right]\right)/N_{\mathrm{BF}}$
+  $\tilde{I} \mathrel{+}= \mathrm{Im}\left(\mathcal{F}^{-1}_{\bm{k} \rightarrow \bm{r}}\left[\frac{G^{\prime} \, \Beta^{\ast} \, \Delta}{\left|\Beta\right|}\right]\right)/N_{\mathrm{BF}}$
   
-**End For**
+**End For** (BF pixels)
 :::
 
 We note the following:
