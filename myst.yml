@@ -36,8 +36,6 @@ project:
     - format: meca
   exclude:
     - README.md
-    - notebooks/icom-ssnr.ipynb
-    - notebooks/08_icom_snr.ipynb
   authors:
     - id: julie
       name: Julie Marie Bekkevold
@@ -170,6 +168,7 @@ project:
     ADF: annular dark field
     ABF: annular bright field
     BF: bright field
+    vBF: virtual bright field
     DPC: differential phase contrast
     iDPC: integrated differential phase contrast
     COM: center of mass
