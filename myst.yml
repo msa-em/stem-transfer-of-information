@@ -23,7 +23,7 @@ project:
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webp
-  date: 2025-04-20
+  date: 2025-05-04
   requirements:
     - 'Dockerfile'
     - requirements.in

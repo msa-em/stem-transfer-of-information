@@ -6,9 +6,54 @@ numbering:
 label : analytical_framework_page
 ---
 
-## Contrast Transfer Function Ingredients
+## STEM Image Formation
 
-For STEM measurements, the complex-valued CTF function, introduced in the [](#stem_image_formation) and [](#stem_ctf) sections, takes the form [@https://doi.org/chsgqd ; @https://doi.org/phzz]:
+The electron wavefunction of a converged electron probe exiting a thin sample is given by [@https://doi.org/chsgqd]:
+:::{math}
+:label: exit-wave-eq
+\psi^{\mathrm{obj}}_{\bm{r}^{\prime}}(\bm{r}) = T(\bm{r}) \times \psi(\bm{r}^{\prime}-\bm{r}),
+:::
+where $\psi$ is the converged electron probe at the object plane, centered at position $\bm{r}^{\prime}$ and defined across arbirtary positions $\bm{r}$ in the object plane, $T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r}) \right]$ is the complex-valued transmission function of the sample phase, $\phi(\bm{r} )$.
+
+The transmitted electron wavefunction is then propagated to the far-field detector plane given by:
+:::{math}
+:label: detector-exit-wave-eq
+\psi^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) = \mathcal{F}_{\bm{r} \rightarrow \bm{k}} \left[ \psi^{\mathrm{obj}}_{\bm{r}^{\prime}}(\bm{r}) \right],
+:::
+where $\mathcal{F}_{\bm{r} \rightarrow \bm{k}}$ is the Fourier operator which transforms positions in the object plane, $\bm{r}$, to positions in the detector plane, $\bm{k}$.
+
+While the electron wavefunction at the detector plane is complex-valued, physical detectors can only record its probability density, given by:
+:::{math}
+:label: probability-density-eq
+J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) = \left| \psi^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) \right|^2,
+:::
+where we have omitted the incoherent integrals resulting from the temporal and spatial partial coherence of the electron source.
+
+Finally, the intensity recorded on a specific detector segment or pixel is given by:
+:::{math}
+:label: detector-intensity-eq
+I_{j,\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D_j(\bm{k})\, d\bm{k},
+:::
+where $D_j(\bm{k})$ is the detector response function for the j<sup>th</sup> segment or pixel.
+
+In general, the relationship between [](#probability-density-eq) and the sample phase is non-linear.
+For weak-phase objects which only scatter the incoming illumination weakly, and can thus be well approximated using the leading terms of the Taylor expansion:
+:::{math}
+:label: weak-phase-taylor-exp-eq
+T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}),
+:::
+then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
+This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{q}^{\prime}$:
+
+:::{math}
+:label: ctf-eq
+\tilde{I}_{j,\bm{q}^{\prime}} = 2\, \tilde{\phi}(\bm{q}^{\prime}) \times \mathcal{L}_j(\bm{q}^{\prime}),
+:::
+where $\mathcal{L}_j(\bm{q}^{\prime})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
+
+## Contrast Transfer Functions
+
+For STEM measurements, the complex-valued CTF function takes the form [@https://doi.org/chsgqd ; @https://doi.org/phzz]:
 
 :::{math}
 :label: complex_ctf_eq
@@ -43,7 +88,7 @@ For a pixelated detector sampled at Nyquist, $D_j(\bm{k}) = \delta(\bm{k})$, the
 :::
 which is known as the spatial-frequency dependent aperture-overlap function and encodes the phase interference between the first order diffracted beams and the direct beam [@10.1016/j.ultramic.2016.09.002].
 
-## Aperture Autocorrelation
+### Aperture Autocorrelation
 
 It is instructive to explore @complex_ctf_eq - @ssb_gamma_eq for the ideal case of no aberrations, $\chi(\bm{k})=0$, and a circular probe-forming aperture with convergence semiangle $k_0$ defined by:
 :::{math}
@@ -74,7 +119,7 @@ Interactive figure illustrating how the aperture autocorrelation function can be
 Notice [](#aperture_autocorrelation_eq) has support up to $2 q_{\mathrm{probe}}$ and is zero beyond that.
 With the exception of iterative ptychography, which we explore in-depth in [](#pixelated_ptycho_page), all STEM phase-retrieval methods are limited by the aperture autocorrelation function.
 
-## Aberration Surface
+### Aberration Surface
 
 Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to the HRTEM CTF:
 :::{math}
