@@ -6,15 +6,6 @@ numbering:
 label : segmented_icom_page
 ---
 
-:::{warning} To-Do:
-
-- <s>Introduce segmented detectors</s>
-- Introduce analytical iCOM CTF (detector segment autocorrelation with complex-probe)
-- <s>Discuss radial vs annular segments</s>
-- <s>Discuss CTF > 1</s>
-
-:::
-
 So far we have discussed the CTF of phase retrieval techniques when detailed 2D images of the diffraction patterns are recorded with a pixelated detector.
 However, pixelated detectors limit the achievable scan speed in experiments due to slow read-out times typically on the order of tens of μs [@10.1093/mictod/qaad005; @bekkevold_ultra-fast_2024].
 For comparison, traditional HAADF imaging is commonly acquired with dwell times as low as $1 - 5$ μs, or even as fast as $< 100$ ns when multi-frame acquisitions are obtained to observe dynamic effects [@10.1093/jmicro/dfp052;@10.1093/jmicro/dfaa017].
