@@ -157,6 +157,7 @@ project:
       recipients:
         - gvarnavides
   abbreviations:
+    EM: electron microscopy
     TEM: transmission electron microscopy
     STEM: scanning transmission electron microscopy
     HRTEM: high resolution transmission electron microscopy

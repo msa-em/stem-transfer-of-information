@@ -6,23 +6,24 @@ numbering:
 label : pixelated_parallax_page
 ---
 
-A pixelated detector images the entire CBED pattern at every scan position, and thus the sum over all the detector pixels gives the BF image.
-Similarly, a sum of only a subset of the pixels inside the BF disk yields an incoherent BF image, similar to a monolithic BF or ABF detector. 
-Further, this is also true on a single pixel level, with the caveat that pixels outside the optic axis produce a shifted BF image in real space.
-This is equivalent to a TEM image with tilted illumination by the principle of reciprocity. 
-In tilt-corrected BF STEM, this is utilized by computationally aligning all of the tilted BF images back into one aligned BF image.
-By doing so, each virtual BF image is aligned to the optic axis and their mean now gives a much sharper, coherent BF image. 
+The principle of [](wiki:Helmholtz_reciprocity) &ndash; which states that conjugate optical processes, such as swapping the source and the detector in EM, produce equivalent results &ndash; can be used to relate HRTEM and STEM imaging modalities.
+Specifically, virtual images formed by single BF pixels in a STEM detector are equivalent to HRTEM images with planewave illumination tilted to the BF pixel angle.
+By extension an annular BF detector, which sums multiple BF pixels, is equivalent to an incoherent integral of tilted HRTEM images over the range of angles inside the BF detector.
+
+Further, when the incoming illumination is aberrated, features in these tilted virtual BF images experience lateral shifts proportional to the gradient of the aberration surface and the tilted illumination angle.
+Tilt-corrected BF STEM (tcBF), utilizes this fact to computationally align all of the tilted vBF images to the optic axis.
+Summing over the these aligned vBF images, yields a much sharper, coherent BF image.
 
 ## Tilt-Corrected BF STEM CTF
 
-The tilt-corrected BF STEM CTF can be understood by starting with the complex-valued aperture overlap function @ssb_gamma_eq, reproduced here for convenience:
+The tcBF CTF can be understood by starting with the complex-valued aperture overlap function @ssb_gamma_eq, reproduced here for convenience:
 :::{math}
 :label: gamma_aperture_chi_eq
 \Gamma(\bm{q},\bm{k}) = A(\bm{k})A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q}-\bm{k})}\mathrm{e}^{\mathrm{i}\chi(\bm{k})} - A(\bm{k})A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q}+\bm{k})}\mathrm{e}^{-\mathrm{i}\chi(\bm{k})}.
 :::
 
-To proceed, we wish to factorize out the part containing the shifts needed to align the tilted BF images from @gamma_aperture_chi_eq.
-The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that we get
+To proceed, we wish to factorize out the part containing the lateral shifts needed to align the tilted vBF images from @gamma_aperture_chi_eq.
+The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that we obtain:
 :::{math}
 :label: gamma_factorization_eq
 \begin{aligned}
@@ -33,15 +34,16 @@ The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that 
 
 Here, the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
 
-Since, in traditional tcBF processing, these lateral shifts are used to align the virtual BF images, they do not contribute to the tcBF CTF which is obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
+Since, in traditional tcBF processing, these lateral shifts are simply used to align the vBF images, without performing any additional deconvolution, they do not contribute to the tcBF CTF.
+As such, the tcBF CTF is obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
 :::{math}
 :label: parallax_ctf_eq
 \begin{aligned}
 \mathrm{Im}\left\{\mathcal{L}^{tcBF}(\bm{q})\right\}  &= \int \Beta(\bm{q},\bm{k}) d\, \bm{k} \\
-                                              &= -\left[A \star A\right](\bm{q}) \sin\left[\chi(\bm{q})\right],
+                                                      &= -\left[A \star A\right](\bm{q}) \sin\left[\chi(\bm{q})\right],
 \end{aligned}
 :::
-which we recognize as the axial CTF modulated by the aperture auto-correlation envelope.
+which we recognize as the HRTEM CTF modulated by the aperture auto-correlation envelope.
 
 :::{figure} #app:pixelated_parallax
 :label: fig_pixelated_parallax
@@ -68,7 +70,7 @@ where $H_{\chi}(\bm{q})$ is the Hessian of the aberration surface.
 
 Truncating @shifted_chi_taylor_eq after the gradient term yields an exact result when the aberration phase function $\chi(\bm{q})$ is quadratic in $\bm{q}$.
 This includes terms such as defocus and astigmatism, which are proportional to $q^2$, $q_x^2 - q_y^2$, and $2q_x q_y$.
-For such quadratic forms, the Hessian is constant and the second-order error term becomes independent of $\bm{q}$, contributing only a global, physically irrelevant phase shift in @gamma_factorization_eq.
+For such quadratic forms, the Hessian is constant and thus the second-order error term becomes independent of $\bm{q}$, contributing only a global, physically irrelevant phase shift in @gamma_factorization_eq.
 However, for higher-order aberration coefficients, such as coma and spherical aberration, @gamma_factorization_eq introduces non-trivial approximation errors which scale with $\bm{q}$ and increase for larger $\bm{k}$ support, reflecting the non-linear curvature of the aberration surface.
 
 :::{table}
