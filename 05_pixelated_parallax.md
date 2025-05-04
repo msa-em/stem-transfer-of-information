@@ -6,10 +6,6 @@ numbering:
 label : pixelated_parallax_page
 ---
 
-:::{warning} To-Do:
-Add general parallax intro.
-:::
-
 A pixelated detector images the entire CBED pattern at every scan position, and thus the sum over all the detector pixels gives the BF image.
 Similarly, a sum of only a subset of the pixels inside the BF disk yields an incoherent BF image, similar to a monolithic BF or ABF detector. 
 Further, this is also true on a single pixel level, with the caveat that pixels outside the optic axis produce a shifted BF image in real space.
@@ -25,7 +21,6 @@ The tilt-corrected BF STEM CTF can be understood by starting with the complex-va
 \Gamma(\bm{q},\bm{k}) = A(\bm{k})A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q}-\bm{k})}\mathrm{e}^{\mathrm{i}\chi(\bm{k})} - A(\bm{k})A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q}+\bm{k})}\mathrm{e}^{-\mathrm{i}\chi(\bm{k})}.
 :::
 
-<!-- To proceed, we wish to factorize @gamma_aperture_chi_eq to read: -->
 To proceed, we wish to factorize out the part containing the shifts needed to align the tilted BF images from @gamma_aperture_chi_eq.
 The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that we get
 :::{math}
@@ -35,12 +30,10 @@ The remaining terms we collect into a function $\Beta(\bm{q},\bm{k})$ such that 
 \Beta(\bm{q},\bm{k}) &= A(\bm{k})\left(A(\bm{q}-\bm{k})\mathrm{e}^{-\mathrm{i}\chi(\bm{q})} - A(\bm{q}+\bm{k})\mathrm{e}^{\mathrm{i}\chi(\bm{q})}\right).
 \end{aligned}
 :::
-<!-- where the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements. -->
-Here, the term involving the gradient of the aberration surface, $\nabla \chi$, is the tilt-correction term.
-Essentially, this is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
-Since this tilt-correction term is ... it does not contribute to the CTF.
 
-The tcBF CTF is then obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
+Here, the term involving the gradient of the aberration surface, $\nabla \chi$, is a phase ramp corresponding to the lateral shifts observed in tcBF measurements.
+
+Since, in traditional tcBF processing, these lateral shifts are used to align the virtual BF images, they do not contribute to the tcBF CTF which is obtained by summing $\Beta(\bm{q},\bm{k})$ over $\bm{k}$:
 :::{math}
 :label: parallax_ctf_eq
 \begin{aligned}
