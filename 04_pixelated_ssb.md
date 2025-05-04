@@ -6,17 +6,20 @@ numbering:
 label : pixelated_ssb_page
 ---
 
-:::{warning} To-Do:
-Add general direct ptycho intro.
-:::
+Direct ptychographic methods can be viewed as deconvolution techniques, which model the interference information encoded in the complex-valued overlap function between the first order diffracted beams and the direct beam, and use it to extract the sample phase [@10.1016/j.ultramic.2016.09.002].
+Intuitively, for a specific wavevector $\bm{q}$, the convolutional effect of the probe can be modeled to estimate the expected phase modulation in the observed diffraction patterns, and any additional phase modulation may thus be attributed to the sample.
 
-The regions of the CBED pattern where the first diffracted beam overlaps with the direct beam contain phase information from the interference between the two beams.
-These double-overlap regions are therefore a source which may be utilized to extract the phase modulation applied on the beam electrons by the sample. 
-Since the expected phase difference between the direct and the first diffracted beam is $\pi$, any phase modulation differing from that may be attributed to the sample.
-Notably, the diffracted beam on both sides of the direct beam are equivalent, and only one of them should be used to retrieve the phase information, which gives rise to the name "single side-band" ptychography.
-<!-- Notably, the diffracted beam at $g$ and $-g$ are equivalent, and only one of them should be used to retrieve the phase information, which gives rise to the name "single side-band" ptychography. -->
+Different direct ptychographic techniques perform this deconvolution differently:
 
-## Direct Ptychography CTF
+- (traditional) SSB [@10.1016/j.ultramic.2014.09.013], sums the phase information in one of the "double-overlap" regions to obtain an average estimate of the sample phase
+  - This only works in the absence of probe aberrations and will be omitted in this work.
+- (phase-compensated) SSB [@10.1016/j.ultramic.2016.09.002], uses @ssb_gamma_eq to perform multiplicative deconvolution, thus "flattening" the phase in the "double" and "triple" overlap regions before summing to obtain a more robust estimate of the sample phase.
+- OBF [@10.1016/j.ultramic.2020.113133], uses the same multiplicative deconvolution idea, albeit using a signal-to-noise optimising normalization.
+  - This is traditionally used with segmented detectors and we explore it in @segmented_ssb_page.
+- WDD [@10.1016/j.ultramic.2016.09.002], uses Wiener deconvolution to isolate the sample phase, after first casting the expected phase modulation in terms of the shifted [](wiki:Wigner_distribution_function).
+- tcBF [@10.1101/2024.04.22.590491], does not tradionally use deconvolution but we introduce a novel algorithm leveraging multiplicative deconvolution in @upsampled_ssb_page.
+
+## Phase Compensated SSB CTF
 
 In contrast to the detector response functions we have investigated so far, direct ptychography can utilize all the phase information in the complex-valued aperture-overlap function @ssb_gamma_eq.
 This suggests that its CTF is instead given by the non-zero regions of @ssb_gamma_eq, and thus given by:
@@ -47,6 +50,6 @@ The resulting CTF is shown on the left panel, with its radial average in the mid
 [](#fig_pixelated_ssb) plots @ssb_ctf_eq for low-order isotropic aberration coefficients, namely $C_{1,0}$ and $C_{3,0}$.
 We note the following:
 
-* The CTF tends to zero for $\bm{q} \rightarrow 0$ and $\bm{q} \rightarrow 2\, q_{\mathrm{probe}}$, peaking in between.
-* The CTF is purely positive, leading to no contrast reversals with thickness / aberrations.
-* Similar to iCOM, the Scherzer condition is suboptimal, since the CTF exhibits no zero-crossings.
+- The CTF tends to zero for $\bm{q} \rightarrow 0$ and $\bm{q} \rightarrow 2\, q_{\mathrm{probe}}$, peaking in between.
+- The CTF is purely positive, leading to no contrast reversals with thickness / aberrations.
+- Similar to ICOM, the Scherzer condition is suboptimal, since the CTF exhibits no zero-crossings.
