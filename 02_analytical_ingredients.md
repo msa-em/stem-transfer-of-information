@@ -6,6 +6,7 @@ numbering:
 label : analytical_framework_page
 ---
 
+(stem_image_formation_sec)=
 ## STEM Image Formation
 
 The electron wavefunction of a converged electron probe exiting a thin sample is given by [@https://doi.org/chsgqd]:
