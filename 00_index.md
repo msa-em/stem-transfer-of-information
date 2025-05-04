@@ -8,7 +8,7 @@ numbering:
 +++ {"part": "abstract"}
 
 Phase retrieval methods in scanning transmission electron microscopy (STEM) recover scattered phase information from far-field intensity measurements of a converged electron probe.
-We evaluate the performance of various phase retrieval techniques -- including center-of-mass imaging (COM), tilt-corrected bright-field STEM (tcBF), and direct ptychographic methods such as single-side band (SSB) and Wigner distribution deconvolution (WDD) -- under different experimental conditions.
+We evaluate the performance of various phase retrieval techniques &ndash; including center-of-mass imaging (COM), tilt-corrected bright-field STEM (tcBF), and direct ptychographic methods such as single-side band (SSB) and Wigner distribution deconvolution (WDD) &ndash; under different experimental conditions.
 Through analytical derivation of contrast transfer functions (CTF) under the weak phase-object approximation and numerical validation using white-noise samples, we assess the impact of scan sampling, illumination aberrations, and detector geometries.
 Based on these findings, we develop a novel direct ptychographic algorithm that combines the relaxed scan-sampling advantages of tcBF while avoiding CTF zero-crossings through SSB recovery.
 Our analysis reveals fundamental limitations in using CTF as a performance metric and demonstrates the advantages of dose-invariant spectral signal-to-noise ratio (SSNR) for evaluating phase retrieval methods.
