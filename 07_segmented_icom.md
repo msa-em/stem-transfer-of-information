@@ -7,40 +7,54 @@ label : segmented_icom_page
 ---
 
 :::{warning} To-Do:
+
 - <s>Introduce segmented detectors</s>
 - Introduce analytical iCOM CTF (detector segment autocorrelation with complex-probe)
 - <s>Discuss radial vs annular segments</s>
 - <s>Discuss CTF > 1</s>
+
 :::
 
-So far we have discussed the CTF of phase retrieval techniques when the whole CBED patterns including the detailed information they contain is recorded with a pixelated detector. 
-However, pixelated detectors limit the scan speed in experiments because the read-out time is typically on the order of tens of μs.
-For comparison, traditional HAADF imaging is not uncommonly acquired with dwell times around $1 - 5$ μs, and even $< 100$ ns may be used for multi-frame recording to observe dynamic effects [@10.1093/jmicro/dfp052;@10.1093/jmicro/dfaa017]. <!-- Could also cite Ishikawa's newest article: ;@10.1126/sciadv.adk6501]. -->
+So far we have discussed the CTF of phase retrieval techniques when detailed 2D images of the diffraction patterns are recorded with a pixelated detector.
+However, pixelated detectors limit the achievable scan speed in experiments due to slow read-out times typically on the order of tens of μs [@10.1093/mictod/qaad005; @bekkevold_ultra-fast_2024].
+For comparison, traditional HAADF imaging is commonly acquired with dwell times as low as $1 - 5$ μs, or even as fast as $< 100$ ns when multi-frame acquisitions are obtained to observe dynamic effects [@10.1093/jmicro/dfp052;@10.1093/jmicro/dfaa017].
 To realize such sub-$10$ μs dwell times for phase retrieval techniques, we need to look to detectors with a minimal read-out overhead limiting the scan speed, which are still able to retrieve the desired phase information.
+One candidate for such detectors are few-pixel segmented detectors, which are already in widespread use for both iCOM and OBF imaging.
 
-One candidate for such detectors are segmented detectors, which are already in widespread use for both iCOM and SSB. 
 In the following we investigate the impact of detector segmentation on the CTF of phase retrieval techniques iCOM, SSB, tcBF, and iterative ptychography, starting here with iCOM.
 
-## Analytical segmented iCOM CTF
-In @pixelated_icom_page we saw that the analytical CTF for iCOM with a pixelated detector is the probe autocorrelation because the detector function $D(\bm{k})$ covers every pixel in the detector as seen in @com_detector_eq.
-However, for a segmented detector, the detector geometry function from @complex_detector_eq, reproduced here for convenience:
+## Analytical Segmented COM CTF
+
+In @pixelated_icom_page, we saw that the analytical CTF for iCOM with a pixelated detector is the autocorrelation of the complex probe, since the pixelated detector function $D_j(\bm{k}) =\delta(\bm{k})$ covers every pixel in the detector as seen in @com_detector_eq.
+However, for a segmented detector, the detector function for the $j^{\mathrm{th}}$ segment is given by:
 :::{math}
 :label: segmented_detector_eq
-D(\bm{k}) = \sum_j c_j D_j(\bm{k}),
-:::
-has to take the segment geometries into account.
-The detector function for the $j$th segment is
-:::{math}
-D_j(\bm{k}) = 
+D_j(\bm{k}) =
 \begin{cases}
 1, & \text{for }\bm{k}\text{ inside detector segment }j \\
 0, & \text{elsewhere}
 \end{cases}
 :::
-and $c_j$ is the (possibly negative) center of mass of detector segment $j$.
-Now the analytical CTF is given by the autocorrelation of each detector segment with the complex probe, which is shown visually in @fig_segmented_icom.
-Here, we can see how the symmetry of the detector is reflected in the symmetry of the two-dimensional CTF.
 
+The combined vectorial detector function is then given by:
+:::{math}
+:label: segmented_vectorial_detector_eq
+\bm{D}(\bm{k}) = \sum_j k_x(\bm{k})D_j(\bm{k}) \hat{k}_x + \sum_j k_y(\bm{k})D_j(\bm{k}) \hat{k}_y,
+:::
+
+with the analytical segmented COM CTFs obtained by:
+:::{math}
+:label: segmented_com_ctf_eq
+\begin{aligned}
+\mathcal{L}^{\mathrm{COM}}_x(\bm{q}) &= \left[\psi \star \psi \, D_x \right](\bm{q}) - \left[\psi \, D_x \star \psi \right](\bm{q}) \\
+\mathcal{L}^{\mathrm{COM}}_y(\bm{q}) &= \left[\psi \star \psi \, D_y \right](\bm{q}) - \left[\psi \, D_y \star \psi \right](\bm{q})
+\end{aligned}
+:::
+
+## Detector Segmentation iCOM CTF
+
+The iCOM CTF is then obtained from @segmented_com_ctf_eq using the same Fourier-integration technique given by @icom_ctf_eq.
+@fig_segmented_icom plots the iCOM CTF for various detector geometries, highlighting how the symmetry of the detector is reflected in the symmetry of the two-dimensional CTF.
 
 :::{figure} #app:segmented_icom
 :label: fig_segmented_icom
@@ -48,8 +62,13 @@ Here, we can see how the symmetry of the detector is reflected in the symmetry o
 Effect of various detector geometries on the CTF for iCOM imaging.
 :::
 
-## Detector impacts
-Since the CTF relies on $c_j$, the center of mass of detector segment $j$, the outer collection angle of an annular detector should match the semi-convergence angle, $\alpha$, for the COM approximation to be accurate.
-An outer collection angle $>> \alpha$ results in over-estimation of the COM signal, and thus produces a CTF above unity. 
-This effect may be somewhat mediated by introducing radial rings which allows the detector to resolve differences in the CBED pattern intensity radially in addition to annularly. <!-- Azimuthally? -->
-Also note that offsetting half of the ring's segments by half of their annular span range ($45^\circ$ for four segments spanning $90^\circ$ each) adds the benefit of better annular resolution, yielding a rounder CTF.
+We note the following:
+
+- As the number of annular and radial segments increases, the iCOM CTF approaches that of the pixelated detector.
+- Since the CTF relies on the center of mass of detector segment $j$, the outer collection angle of an annular detector should match the semi-convergence angle, $\alpha$, for the COM approximation to be accurate.
+  - An outer collection angle $\gg q_{\mathrm{probe}}$ results in over-estimation of the COM signal, and thus produces a CTF above unity.
+- This effect may be somewhat remedied by introducing radial rings which allows the detector to resolve the COM signal radially in addition to annularly.
+- For detectors with few annular segments, the 2D CTF is anisotropic, resulting in non-round atoms when convolved with the STO WPO.
+- The rotational-offset of the annular segments is reflected in the 2D CTF orientation.
+  - Note this effect is obfuscated in the commonly-presented 1D radial averages.
+- Offsetting half of the ring's segments by half of their annular span range (e.g. $45^\circ$ for four segments spanning $90^\circ$ each) further improves annular resolution, yielding a more isotropic CTF.
