@@ -6,7 +6,7 @@ numbering:
 label : pixelated_ssb_page
 ---
 
-Direct ptychographic methods can be viewed as deconvolution techniques, which model the interference information encoded in the complex-valued overlap function between the first order diffracted beams and the direct beam, and use it to extract the sample phase [@10.1016/j.ultramic.2016.09.002].
+Direct ptychographic methods can be viewed as deconvolution techniques, which model the interference information encoded in the overlap between the first order diffracted beams and the direct beam, and use that to extract the sample phase.
 Intuitively, for a specific wavevector $\bm{q}$, the convolutional effect of the probe can be modeled to estimate the expected phase modulation in the observed diffraction patterns, and any additional phase modulation may thus be attributed to the sample.
 
 Different direct ptychographic techniques perform this deconvolution differently:
@@ -14,15 +14,15 @@ Different direct ptychographic techniques perform this deconvolution differently
 - (traditional) SSB [@10.1016/j.ultramic.2014.09.013], sums the phase information in one of the "double-overlap" regions to obtain an average estimate of the sample phase
   - This only works in the absence of probe aberrations and will be omitted in this work.
 - (phase-compensated) SSB [@10.1016/j.ultramic.2016.09.002], uses @ssb_gamma_eq to perform multiplicative deconvolution, thus "flattening" the phase in the "double" and "triple" overlap regions before summing to obtain a more robust estimate of the sample phase.
-- OBF [@10.1016/j.ultramic.2020.113133], uses the same multiplicative deconvolution idea, albeit using a signal-to-noise optimising normalization.
-  - This is traditionally used with segmented detectors and we explore it in @segmented_ssb_page.
+- OBF [@10.1016/j.ultramic.2020.113133], uses the same multiplicative deconvolution idea, albeit using a signal-to-noise optimizing normalization weights.
+  - This is traditionally used with segmented detectors and we explore it further in @segmented_ssb_page.
 - WDD [@10.1016/j.ultramic.2016.09.002], uses Wiener deconvolution to isolate the sample phase, after first casting the expected phase modulation in terms of the shifted [](wiki:Wigner_distribution_function).
-- tcBF [@10.1101/2024.04.22.590491], does not tradionally use deconvolution but we introduce a novel algorithm leveraging multiplicative deconvolution in @upsampled_ssb_page.
+- tcBF [@10.1101/2024.04.22.590491], does not traditionally use deconvolution but we introduce a novel algorithm leveraging multiplicative deconvolution in @upsampled_ssb_page.
 
 ## Phase Compensated SSB CTF
 
 In contrast to the detector response functions we have investigated so far, direct ptychography can utilize all the phase information in the complex-valued aperture-overlap function @ssb_gamma_eq.
-This suggests that its CTF is instead given by the non-zero regions of @ssb_gamma_eq, and thus given by:
+This suggests that its CTF is instead given by summing the non-zero regions of @ssb_gamma_eq, which yields:
 
 :::{math}
 :label: ssb_ctf_eq
@@ -31,7 +31,7 @@ This suggests that its CTF is instead given by the non-zero regions of @ssb_gamm
 
 While the absolute value inside the integrand precludes a cleaner expression using correlation functions, which rely on linearity, @ssb_ctf_eq can be parallelized efficiently across spatial frequencies, $\bm{q}$.
 
-For completeness, we note in passing that for the ideal case of $\chi(\bm{k})=0$, @ssb_ctf_eq reduces to the well-known geometric "double-minus-triple overlap" expression given by:
+For completeness, we note in passing that for the ideal case of no probe aberrations, $\chi(\bm{k})=0$, @ssb_ctf_eq reduces to the well-known geometric "double-minus-triple overlap" expression given by [@10.1016/j.ultramic.2014.10.013]:
 
 :::{math}
 :label: geometric_ssb_ctf_eq
@@ -51,5 +51,5 @@ The resulting CTF is shown on the left panel, with its radial average in the mid
 We note the following:
 
 - The CTF tends to zero for $\bm{q} \rightarrow 0$ and $\bm{q} \rightarrow 2\, q_{\mathrm{probe}}$, peaking in between.
-- The CTF is purely positive, leading to no contrast reversals with thickness / aberrations.
-- Similar to ICOM, the Scherzer condition is suboptimal, since the CTF exhibits no zero-crossings.
+- The CTF is purely positive, leading to no contrast reversals with aberrations (and by extension thickness).
+- Similar to iCOM, the Scherzer defocus condition is suboptimal in the presence of spherical aberration, since the SSB CTF exhibits no zero-crossings.
