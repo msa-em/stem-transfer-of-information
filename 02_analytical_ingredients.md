@@ -27,7 +27,7 @@ While the electron wavefunction at the detector plane is complex-valued, physica
 :label: probability-density-eq
 J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) = \left| \psi^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) \right|^2,
 :::
-where we have omitted the incoherent integrals resulting from the temporal and spatial partial coherence of the electron source.
+where we have omitted the incoherent integrals resulting from the temporal and spatial partial coherence of the electron source [@https://doi.org/chsgqd].
 
 Finally, the intensity recorded on a specific detector segment or pixel is given by:
 :::{math}
@@ -37,23 +37,24 @@ I_{j,\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D_j(\bm{
 where $D_j(\bm{k})$ is the detector response function for the j<sup>th</sup> segment or pixel.
 
 In general, the relationship between [](#probability-density-eq) and the sample phase is non-linear.
-For weak-phase objects which only scatter the incoming illumination weakly, and can thus be well approximated using the leading terms of the Taylor expansion:
+Weak-phase objects only scatter the incoming illumination weakly, and can thus be well approximated using the leading terms of the Taylor expansion,
 :::{math}
 :label: weak-phase-taylor-exp-eq
-T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}),
+T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}).
 :::
-then the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
-This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency,$\bm{q}^{\prime}$:
+
+In this case, the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
+This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency, $\bm{q}^{\prime}$:
 
 :::{math}
 :label: ctf-eq
 \tilde{I}_{j,\bm{q}^{\prime}} = 2\, \tilde{\phi}(\bm{q}^{\prime}) \times \mathcal{L}_j(\bm{q}^{\prime}),
 :::
-where $\mathcal{L}_j(\bm{q}^{\prime})$ is the complex-valued contrast transfer of information (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
+where $\mathcal{L}_j(\bm{q}^{\prime})$ is the complex-valued contrast transfer function (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
 
 ## Contrast Transfer Functions
 
-For STEM measurements, the complex-valued CTF function takes the form [@https://doi.org/chsgqd ; @https://doi.org/phzz]:
+For STEM measurements, the complex-valued CTF function takes the form [@https://doi.org/chsgqd]:
 
 :::{math}
 :label: complex_ctf_eq
