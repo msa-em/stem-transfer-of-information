@@ -13,7 +13,7 @@ The electron wavefunction of a converged electron probe exiting a thin sample is
 :label: exit-wave-eq
 \psi^{\mathrm{obj}}_{\bm{r}^{\prime}}(\bm{r}) = T(\bm{r}) \times \psi(\bm{r}^{\prime}-\bm{r}),
 :::
-where $\psi$ is the converged electron probe at the object plane, centered at position $\bm{r}^{\prime}$ and defined across arbirtary positions $\bm{r}$ in the object plane, $T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r}) \right]$ is the complex-valued transmission function of the sample phase, $\phi(\bm{r} )$.
+where $\psi$ is the converged electron probe at the object plane, centered at position $\bm{r}^{\prime}$ and defined across arbitrary positions $\bm{r}$ in the object plane, $T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r}) \right]$ is the complex-valued transmission function of the sample phase, $\phi(\bm{r} )$.
 
 The transmitted electron wavefunction is then propagated to the far-field detector plane given by:
 :::{math}
@@ -108,7 +108,7 @@ In this case @symmetric_asymmetric_correlations_eq reduces to the aperture auto-
   \right\}.
 :::
 
-Intuitively, [](#aperture_autocorrelation_eq) can be interperted as the "double overlap" area between the aperture and a shifted aperture centered at $\bm{k}$.
+Intuitively, [](#aperture_autocorrelation_eq) can be interpreted as the "double overlap" area between the aperture and a shifted aperture centered at $\bm{k}$.
 [](#fig_aperture_autocorrelation_widget) illustrates this interactively, as well as plot the radially-averaged aperture autocorrelation function.
 
 :::{figure} #app:aperture_autocorrelation_widget
