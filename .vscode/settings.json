@@ -24,7 +24,8 @@
         "upsampling",
         "wavefunction",
         "wavevector",
-        "WPOA"
+        "WPOA",
+        "Zernike"
     ],
     "cSpell.ignoreWords": [
         "Bigl",
@@ -41,6 +42,7 @@
         "aiep",
         "arctan",
         "bekkevold",
+        "bioconf",
         "bmatrix",
         "dekkers",
         "gvarnavides",
