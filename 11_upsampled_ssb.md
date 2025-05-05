@@ -31,7 +31,7 @@ SSB split-operator decomposition, illustrating sub-sampling capabilities.
 We note the following:
 
 - The upsampled tcBF and SSB CTFs match the Nyquist-sampled CTFs we derived in [](#pixelated_parallax_page) and [](#pixelated_ssb_page).
-- Convolving the SSB CTF with a WPO result in significantly improved reconstuctions over convolving with the tcBF CTF, due to the lack of zero-crossings.
+- Convolving the SSB CTF with a WPO result in significantly improved reconstructions over convolving with the tcBF CTF, due to the lack of zero-crossings.
 - Larger defocus values are more robust to higher sub-sampling factors, since the measured lateral-shifts, and thus the phase-ramp shifts, are larger than the scan sampling.
   - In the limit of no defocus, the upsampled SSB CTF becomes very noisy.
 

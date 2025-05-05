@@ -35,7 +35,7 @@ We note the following:
 
 ## Noise Optimizing OBF Weights
 
-Optimum Bright Field (OBF) STEM bears many simularities with phase-compensated SSB, and was in-fact developed specifically to optimize the signal-to-noise ratio in reconstrutions using segmented detectors [@10.1016/j.ultramic.2020.113133; @10.1093/jmicro/dfae051].
+Optimum Bright Field (OBF) STEM bears many similarities with phase-compensated SSB, and was in-fact developed specifically to optimize the signal-to-noise ratio in reconstructions using segmented detectors [@10.1016/j.ultramic.2020.113133; @10.1093/jmicro/dfae051].
 
 This is done by using a different normalization than SSB in phase-compensating the measured aperture-overlap function, given by:
 
