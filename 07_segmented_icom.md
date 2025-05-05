@@ -37,8 +37,8 @@ with the analytical segmented COM CTFs obtained by:
 :::{math}
 :label: segmented_com_ctf_eq
 \begin{aligned}
-\mathcal{L}^{\mathrm{COM}}_x(\bm{q}) &= \left[\psi \star \psi \, D_x \right](\bm{q}) - \left[\psi \, D_x \star \psi \right](\bm{q}) \\
-\mathcal{L}^{\mathrm{COM}}_y(\bm{q}) &= \left[\psi \star \psi \, D_y \right](\bm{q}) - \left[\psi \, D_y \star \psi \right](\bm{q})
+\mathcal{L}^{\mathrm{S-COM}}_x(\bm{q}) &= \left[\psi \star \psi \, D_x \right](\bm{q}) - \left[\psi \, D_x \star \psi \right](\bm{q}) \\
+\mathcal{L}^{\mathrm{S-COM}}_y(\bm{q}) &= \left[\psi \star \psi \, D_y \right](\bm{q}) - \left[\psi \, D_y \star \psi \right](\bm{q})
 \end{aligned}
 :::
 
