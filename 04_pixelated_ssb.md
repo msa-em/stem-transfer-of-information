@@ -6,14 +6,15 @@ numbering:
 label : pixelated_ssb_page
 ---
 
-Direct ptychographic methods can be viewed as deconvolution techniques, which model the interference information encoded in the overlap between the first order diffracted beams and the direct beam, and use that to extract the sample phase.
+Direct ptychographic methods can be viewed as deconvolution techniques.
+Specifically, they use the interference information encoded in the overlap between the diffracted beams and the direct beam to extract the sample phase.
 Intuitively, for a specific wavevector $\bm{q}$, the convolutional effect of the probe can be modeled to estimate the expected phase modulation in the observed diffraction patterns, and any additional phase modulation may thus be attributed to the sample.
 
 Different direct ptychographic techniques perform this deconvolution differently:
 
-- (traditional) SSB [@10.1016/j.ultramic.2014.09.013], sums the phase information in one of the "double-overlap" regions to obtain an average estimate of the sample phase
+- "traditional" SSB [@10.1016/j.ultramic.2014.09.013], sums the phase information in one of the "double-overlap" regions to obtain an average estimate of the sample phase
   - This only works in the absence of probe aberrations and will be omitted in this work.
-- (phase-compensated) SSB [@10.1016/j.ultramic.2016.09.002], uses @ssb_gamma_eq to perform multiplicative deconvolution, thus "flattening" the phase in the "double" and "triple" overlap regions before summing to obtain a more robust estimate of the sample phase.
+- "phase-compensated" SSB [@10.1016/j.ultramic.2016.09.002], uses @ssb_gamma_eq to perform multiplicative deconvolution, thus "flattening" the phase in the "double" and "triple" overlap regions before summing to obtain a more robust estimate of the sample phase.
 - OBF [@10.1016/j.ultramic.2020.113133], uses the same multiplicative deconvolution idea, albeit using a signal-to-noise optimizing normalization weights.
   - This is traditionally used with segmented detectors and we explore it further in @segmented_ssb_page.
 - WDD [@10.1016/j.ultramic.2016.09.002], uses Wiener deconvolution to isolate the sample phase, after first casting the expected phase modulation in terms of the shifted [](wiki:Wigner_distribution_function).
