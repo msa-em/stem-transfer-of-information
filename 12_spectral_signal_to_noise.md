@@ -22,7 +22,7 @@ To remedy this, we perform $M$ independent reconstructions on Poisson draws at f
 \end{aligned}
 :::
 where the overbar denotes an average value.
-Intuitively, @ssnr_eq represents the mean divided by the standard deviation of the independent reconstructions for each spatial frequency $\bm{q}$.
+Intuitively, @ssnr_eq represents the absolute value of the sample mean divided by the sample standard deviation of the independent reconstructions for each spatial frequency $\bm{q}$.
 
 ## SSNR and Detective Quantum Efficiency
 
@@ -30,10 +30,10 @@ We note in passing that the simple SSNR metric defined in @ssnr_eq, is closely r
 
 :::{math}
 :label: dqe_eq
-\mathrm{DQE}(\bm{q}) = \frac{\mathrm{SSNR}_{\mathrm{out}}(\bm{q})^2}{\mathrm{SSNR}_{\mathrm{in}}(\bm{q})^2},
+\mathrm{DQE}(\bm{q}) = \frac{\mathrm{SSNR}_{\mathrm{out}}^2(\bm{q})}{\mathrm{SSNR}_{\mathrm{in}}^2(\bm{q})},
 :::
 where $\mathrm{SSNR}_{\mathrm{in}}(\bm{q})$ denotes a reference or "ideal" SSNR.
-This is usually taken as the Zernike HRTEM SSNR, which for a white-noise object is simply given by the squared root of the electron fluence.
+This is usually taken as the HRTEM SSNR when using an ideal Zernike phase-plate [@10.1016/S0031-8914(42)80079-8], which for a white-noise object is simply given by the squared root of the electron fluence.
 As such, the metrics are trivially related in our case, and in what follows we use the simpler SSNR metric.
 
 ## To-Dos
