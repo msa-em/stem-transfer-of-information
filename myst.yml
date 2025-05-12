@@ -192,8 +192,8 @@ project:
     - title: Segmented Detector CTF
       children:
         - pattern: "*segmented*.md"
-    - file: 11_upsampled_ssb.md
-    - file: 12_spectral_signal_to_noise.md
+    - file: 12_upsampled_ssb.md
+    - file: 13_spectral_signal_to_noise.md
     - title: Notebooks
       children:
         - pattern: "notebooks/[0-9]*.ipynb"
