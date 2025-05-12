@@ -40,3 +40,9 @@ As such, the metrics are trivially related in our case, and in what follows we u
 :label: fig_static_icom_ssnr
 SSNR calculation for pixelated and segmented iCOM, highlighting that the noise is inversely linear with spatial frequency and is independent of detector geometry.
 :::
+
+:::{figure} #app:snr_segmented_icom
+:label: fig_icom_ssnr
+:placeholder: ./figures/widget_icom_ssnr_placeholder.png
+Interactive widget demonstrating analytical iCOM SSNR for various detector geometries.
+:::
