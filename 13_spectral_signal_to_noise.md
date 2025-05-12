@@ -1,7 +1,7 @@
 ---
 title: Spectral Signal to Noise
 numbering:
-  enumerator: 12.%s
+  enumerator: 13.%s
 label : ssnr_page
 ---
 

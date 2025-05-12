@@ -1,7 +1,7 @@
 ---
 title: Upsampled Direct Ptychography
 numbering:
-  enumerator: 11.%s
+  enumerator: 12.%s
 label : upsampled_ssb_page
 ---
 
