@@ -45,13 +45,20 @@ T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \
 :::
 
 In this case, the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
-This is most commonly expressed in terms of the intensity Fourier transform, $\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right]$, as a function of spatial frequency, $\bm{q}^{\prime}$:
-
+This is most commonly expressed in terms of the intensity Fourier transform, 
+:::{math}
+:label: fourier_transform
+\tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right],
+:::
+as a function of spatial frequency, $\bm{q}^{\prime}$.
+Note that we use $\bm{q}$ to denote the spatial frequency corresponding to a specific scan position.
+This is different from $\bm{k}$ which denotes position in the detector plane.
+The intensity Fourier transform becomes
 :::{math}
 :label: ctf-eq
 \tilde{I}_{j,\bm{q}^{\prime}} = 2\, \tilde{\phi}(\bm{q}^{\prime}) \times \mathcal{L}_j(\bm{q}^{\prime}),
 :::
-where $\mathcal{L}_j(\bm{q}^{\prime})$ is the complex-valued contrast transfer function (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
+where $\mathcal{L}_j(\bm{q})$ is the complex-valued contrast transfer function (CTF), which is sample-independent and depends on the properties of the imaging system, such as the incoming illumination aperture and aberrations, the detector geometry, and the reconstruction method.
 
 ## Contrast Transfer Functions
 
@@ -129,7 +136,9 @@ Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to 
 \mathrm{Im}\left\{\mathcal{L}^{\mathrm{axial}}(\bm{q})\right\} = -\sin\left[\chi(\bm{q})\right].
 :::
 
-[](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order coefficients, as well as provide the functionality to balance spherical aberration using the Scherzer defocus:
+[](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order aberration coefficients, illustrating the effect these have on the imaging wavefront.
+For TEM, the resolution achievable is limited by the first contrast reversal, which is pushed to lower spatial frequency with increasing spherical aberration.
+[](#fig_aberration_surface_widget) therefore also has the functionality to balance the spherical aberration, and optimise contrast transfer, using Scherzer defocus:
 :::{math}
 :label: scherzer_defocus_eq
 C_{1,0}^{\mathrm{sch.}} = \mathrm{sgn}\left\{C_{3,0}\right\} \sqrt{\frac{3}{2} \left| C_{3,0}\right| \lambda },
@@ -141,3 +150,7 @@ where $\mathrm{sgn}\left\{\cdot\right\}$ denotes the sign of a real number.
 :placeholder: ./figures/aberrations_surface_placeholder.png
 Interactive figure showing the aberration surface for common low-order aberrations.
 :::
+
+In STEM, on the other hand, the achievable resolution is often limited by the size of the probe used to scan the sample.
+Since a larger probe-forming aperture yields a smaller probe, the aperture should usually be as large as practically possible while limiting probe aberrations.
+@fig_aberration_surface_widget visualizes how low-order aberrations impact the aberration surface, providing a tool to estimate how large the probe forming aperture may be to ensure a maximum of $\pi/4$ phase shift.
