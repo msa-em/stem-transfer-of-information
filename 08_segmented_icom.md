@@ -13,23 +13,13 @@ However, segmented detectors of other geometries may be realized as well, and th
 ## Analytical Segmented COM CTF
 
 In @pixelated_icom_page, we saw that the analytical CTF for iCOM with a pixelated detector is the autocorrelation of the complex probe, since the pixelated detector function $D_j(\bm{k}) =\delta(\bm{k})$ covers every pixel in the detector as seen in @com_detector_eq.
-However, for a segmented detector, the detector function for the $j^{\mathrm{th}}$ segment is given by:
-:::{math}
-:label: segmented_detector_eq
-D_j(\bm{k}) =
-\begin{cases}
-1, & \text{for }\bm{k}\text{ inside detector segment }j \\
-0, & \text{elsewhere}
-\end{cases}
-:::
-
-The combined vectorial detector function is then given by:
+For a segmented detector given by @segmented_detector_eq the combined vectorial detector function is given by:
 :::{math}
 :label: segmented_vectorial_detector_eq
 \bm{D}(\bm{k}) = \sum_j k_x(\bm{k})D_j(\bm{k}) \hat{k}_x + \sum_j k_y(\bm{k})D_j(\bm{k}) \hat{k}_y,
 :::
 
-with the analytical segmented COM CTFs obtained by:
+with the analytical segmented COM CTFs obtained by [@10.1016/bs.aiep.2017.01.006]:
 :::{math}
 :label: segmented_com_ctf_eq
 \begin{aligned}
