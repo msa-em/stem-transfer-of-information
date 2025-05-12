@@ -24,6 +24,7 @@ The segmented SSB CTF can be derived analytically by binning the aperture-overla
 :label: fig_segmented_ssb
 :placeholder: ./figures/segmented_ssb_placeholder.png
 Effect of detector geometries on the CTF for SSB direct ptychography.
+The double-triple overlap regions are colloquially referred to as "trotters", due to their visual similarity with a [](wiki:Pig's_trotter).
 :::
 
 We note the following:
