@@ -180,6 +180,7 @@ project:
     tcBF: tilt-corrected bright field
     CTF: contrast transfer function
     SNR: signal-to-noise ratio
+    SSNR: spectral signal-to-noise ratio
     DQE: detector quantum efficiency
   toc:
     - file: 00_index.md
