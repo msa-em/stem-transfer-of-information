@@ -56,6 +56,7 @@ Effect of various detector geometries on the CTF for iCOM imaging.
 We note the following:
 
 - As the number of annular and radial segments increases, the iCOM CTF approaches that of the pixelated detector.
+  - Similarly to pixelated iCOM, the CTF degrades quickly with increasing defocus. The effect is even more pronounced with large, few detector elements.
 - Since the CTF relies on the center of mass of detector segment $j$, the outer collection angle of an annular detector should match the semi-convergence angle, $\alpha$, for the COM approximation to be accurate.
   - An outer collection angle $\gg q_{\mathrm{probe}}$ results in over-estimation of the COM signal, and thus produces a CTF above unity.
 - This effect may be somewhat remedied by introducing radial rings which allows the detector to resolve the COM signal radially in addition to annularly.
