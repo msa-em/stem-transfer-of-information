@@ -15,10 +15,10 @@ project:
     - detector quantum efficiency
   github: https://github.com/msa-em/stem-transfer-of-information
   jupyter: true
-#  jupyter:
-#    server:
-#      url: 'http://localhost:8888'
-#      token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
+  # jupyter:
+  #   server:
+  #     url: 'http://localhost:8888'
+  #     token: '512ac78f14e1141db1fac17e8b4099c1e5bc7d589518b38c'
   open_access: true
   license: CC-BY-4.0
   banner: banner.png
@@ -194,6 +194,7 @@ project:
         - pattern: "*segmented*.md"
     - file: 12_upsampled_ssb.md
     - file: 13_spectral_signal_to_noise.md
+    - file: 14_conclusions.md
     - title: Notebooks
       children:
         - pattern: "notebooks/[0-9]*.ipynb"
