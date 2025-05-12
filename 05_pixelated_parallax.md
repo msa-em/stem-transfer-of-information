@@ -11,7 +11,7 @@ Specifically, virtual images formed by single BF pixels in a STEM detector are e
 By extension an annular BF detector, which sums multiple BF pixels, is equivalent to an incoherent integral of tilted HRTEM images over the range of angles inside the BF detector.
 
 Further, when the incoming illumination is aberrated, features in these tilted virtual BF images experience lateral shifts proportional to the gradient of the aberration surface and the tilted illumination angle.
-Tilt-corrected BF STEM (tcBF), utilizes this fact to computationally align all of the tilted vBF images to the optic axis.
+Tilt-corrected BF STEM (tcBF) [@10.1101/2024.04.22.590491], also known as parallax imaging [@10.69761/XUNR2166], utilizes this fact to computationally align all of the tilted vBF images to the optic axis.
 Summing over the these aligned vBF images, yields a much sharper, coherent BF image.
 
 ## Tilt-Corrected BF STEM CTF
