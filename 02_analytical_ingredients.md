@@ -38,14 +38,14 @@ I_{j,\bm{r}^{\prime}} = \int J^{\mathrm{det}}_{\bm{r}^{\prime}}(\bm{k}) D_j(\bm{
 where $D_j(\bm{k})$ is the detector response function for the j<sup>th</sup> segment or pixel.
 
 In general, the relationship between [](#probability-density-eq) and the sample phase is non-linear.
-Weak-phase objects only scatter the incoming illumination weakly, and can thus be well approximated using the leading terms of the Taylor expansion,
+Weak-phase objects only scatter the incoming illumination weakly, and can thus be well approximated using the leading terms of the Taylor expansion, known as the weak phase object approximation (WPOA),
 :::{math}
 :label: weak-phase-taylor-exp-eq
 T(\bm{r}) = \exp\left[\mathrm{i}\,\phi(\bm{r})\right] \approx 1 + \mathrm{i}\, \phi(\bm{r}).
 :::
 
 In this case, the image formation theory described above becomes linear, and the image contrast is proportional to the sample phase.
-This is most commonly expressed in terms of the intensity Fourier transform, 
+This is most commonly expressed in terms of the intensity Fourier transform,
 :::{math}
 :label: fourier_transform
 \tilde{I}_{j,\bm{q}^{\prime}} = \mathcal{F}_{\bm{r}^{\prime} \rightarrow \bm{q}^{\prime}}\left[ I_{j,\bm{r}^{\prime}} \right],
@@ -138,7 +138,7 @@ Similarly, for axial illumination, $\bm{k} = 0$, [](#complex_ctf_eq) reduces to 
 
 [](#fig_aberration_surface_widget) plots [](#hrtem_ctf_eq) for common low-order aberration coefficients, illustrating the effect these have on the imaging wavefront.
 For TEM, the resolution achievable is limited by the first contrast reversal, which is pushed to lower spatial frequency with increasing spherical aberration.
-[](#fig_aberration_surface_widget) therefore also has the functionality to balance the spherical aberration, and optimise contrast transfer, using Scherzer defocus:
+[](#fig_aberration_surface_widget) therefore also has the functionality to balance the spherical aberration, and optimize contrast transfer, using Scherzer defocus:
 :::{math}
 :label: scherzer_defocus_eq
 C_{1,0}^{\mathrm{sch.}} = \mathrm{sgn}\left\{C_{3,0}\right\} \sqrt{\frac{3}{2} \left| C_{3,0}\right| \lambda },
