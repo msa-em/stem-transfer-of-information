@@ -74,7 +74,7 @@ This is shown in the right panel of @fig_pixelated_icom_static, and note that th
 Note that the CTF degrades quickly with increasing aberrations, hence iCOM is traditionally performed in-focus.
 Additionally, note that the Scherzer defocus is not in-fact optimal for a specific chromatic aberration, since the CTF does not exhibit the same zero-crossings as the HRTEM CTF.
 
-The right-most panel utilizes the linearity of the WPOA to convolve the resulting CTF with three sample potentials at various length-scales: i) a strontium titanate (STO) sample, ii) a metal-organic framework sample, and iii) an apoferritin protein sample.
+The right-most panel utilizes the linearity of the WPOA to convolve the resulting CTF with three sample potentials at various length-scales: i) a thin strontium titanate (STO) sample, ii) a metal-organic framework sample, and iii) an apoferritin protein sample.
 Note that at large defocuses, the CTF can exhibit contrast reversals.
 
 :::{figure} #app:pixelated_icom
@@ -84,6 +84,6 @@ Effect of various probe aberrations on the CTF for iCOM imaging with a pixelated
 The resulting CTF is shown on the left panel, with its radial average in the middle panel, and its effect on example weak phase objects on the right panel.
 :::
 
-Finally, it is interesting to note that analytical iCOM CTF suggests that the direct-component (DC) frequency is recovered exactly.
+Finally, it is interesting to note that analytical iCOM CTF suggests that the mean value of the reconstructed phase, given by the direct-component (DC) frequency, is recovered exactly.
 This is incorrect, since only off-axis holographic techniques can recover the absolute phase of a sample, and highlights the main limitation of CTF analysis &ndash; namely that it completely neglects finite electron fluence and Poisson-limited detector measurements.
 We remedy this point in [](#ssnr_page) where we introduce the spectral signal-to-noise (SSNR) statistical framework.
