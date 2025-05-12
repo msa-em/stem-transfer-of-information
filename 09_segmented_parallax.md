@@ -31,7 +31,7 @@ Effect of various detector geometries on the CTF for tcBF.
 
 We note the following:
 
-- The segmented 2D CTF similarly illustrates "Thon-ring" like oscillations, albeit including imprints of the detector geometry as well.
+- The segmented 2D CTF similarly illustrates "Thon-ring" like oscillations [@10.1515/zna-1966-0417], albeit including imprints of the detector geometry as well.
   - As expected, the CTF approaches zero in the ideal case of no probe aberrations.
 - Detector segments whose centroid lies outside the BF disk are omitted, since those better resemble dark-field images.
 - The segmented CTF tends to "overshoot" the pixelated CTF since, similar to iCOM, it overestimates the center-of-mass gradient.
