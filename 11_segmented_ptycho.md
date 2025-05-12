@@ -2,7 +2,7 @@
 title: Iterative Ptychography with a Segmented Detector
 short_title: Segmented iterative ptycho
 numbering:
-  enumerator: 10.%s
+  enumerator: 11.%s
 label : segmented_ptycho_page
 ---
 

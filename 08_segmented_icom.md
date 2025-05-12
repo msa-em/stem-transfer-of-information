@@ -2,38 +2,24 @@
 title: Integrated Center of Mass Imaging with a Segmented Detector
 short_title: Segmented iCOM
 numbering:
-  enumerator: 7.%s
+  enumerator: 8.%s
 label : segmented_icom_page
 ---
 
-So far we have discussed the CTF of phase retrieval techniques when detailed 2D images of the diffraction patterns are recorded with a pixelated detector.
-However, pixelated detectors limit the achievable scan speed in experiments due to slow read-out times typically on the order of tens of μs [@10.1093/mictod/qaad005; @bekkevold_ultra-fast_2024].
-For comparison, traditional HAADF imaging is commonly acquired with dwell times as low as $1 - 5$ μs, or even as fast as $< 100$ ns when multi-frame acquisitions are obtained to observe dynamic effects [@10.1093/jmicro/dfp052;@10.1093/jmicro/dfaa017].
-To realize such sub-$10$ μs dwell times for phase retrieval techniques, we need to look to detectors with a minimal read-out overhead limiting the scan speed, which are still able to retrieve the desired phase information.
-One candidate for such detectors are few-pixel segmented detectors, which are already in widespread use for both iCOM and OBF imaging.
-
-In the following we investigate the impact of detector segmentation on the CTF of phase retrieval techniques iCOM, SSB, tcBF, and iterative ptychography, starting here with iCOM.
+One of the simplest ways to use the signal from a classical four-segmented detector is estimating the COM of the BF disk by subtracting opposing detector segments.
+It was shown over a decade ago that this enables imaging of single atomic columns [@10.1038/nphys2337].
+However, segmented detectors of other geometries may be realized as well, and the CTF framework lends itself well to investigating the information transfer dependency on the detector geometry.
 
 ## Analytical Segmented COM CTF
 
 In @pixelated_icom_page, we saw that the analytical CTF for iCOM with a pixelated detector is the autocorrelation of the complex probe, since the pixelated detector function $D_j(\bm{k}) =\delta(\bm{k})$ covers every pixel in the detector as seen in @com_detector_eq.
-However, for a segmented detector, the detector function for the $j^{\mathrm{th}}$ segment is given by:
-:::{math}
-:label: segmented_detector_eq
-D_j(\bm{k}) =
-\begin{cases}
-1, & \text{for }\bm{k}\text{ inside detector segment }j \\
-0, & \text{elsewhere}
-\end{cases}
-:::
-
-The combined vectorial detector function is then given by:
+For a segmented detector given by @segmented_detector_eq the combined vectorial detector function is given by:
 :::{math}
 :label: segmented_vectorial_detector_eq
 \bm{D}(\bm{k}) = \sum_j k_x(\bm{k})D_j(\bm{k}) \hat{k}_x + \sum_j k_y(\bm{k})D_j(\bm{k}) \hat{k}_y,
 :::
 
-with the analytical segmented COM CTFs obtained by:
+with the analytical segmented COM CTFs obtained by [@10.1016/bs.aiep.2017.01.006]:
 :::{math}
 :label: segmented_com_ctf_eq
 \begin{aligned}
