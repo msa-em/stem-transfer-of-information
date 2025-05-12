@@ -17,7 +17,7 @@ This also serves to increase the signal-to-noise ratio in individual vBF images,
 
 The segmented tcBF CTF can be derived analytically by binning the shift-decoupled aperture-overlap function, $\Beta(\bm{q},\bm{k})$, using the detector geometry:
 :::{math}
-:label: segmented_ssb_ctf_eq
+:label: segmented_tcbf_ctf_eq
 \mathcal{L}^{\mathrm{S-tcBF}}(\bm{q}) = \frac{\mathrm{i}}{2} \sum_j \int D_j (\bm{k}) \Beta(\bm{q},\bm{k}) d\, \bm{k}.
 :::
 
