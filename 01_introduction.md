@@ -5,7 +5,15 @@ numbering:
 label : introduction_page
 ---
 
+Transmission electron microscopy (TEM), both with conventional collimated illumination and with a focused probe in scanning mode, is a very powerful tool for studying materials at the nanoscale.
+The ability to resolve atomic structure in materials allows for detailed investigation of how properties at the atomic level impact macroscopic behavior and properties of materials [@10.1038/33823].
+In this work, we focus on scanning transmission electron microscopy (STEM) [@10.1126/science.168.3937.1338], although references to high-resolution TEM (HRTEM) will be made throughout.
 
+The most commonly used imaging method in STEM is annular dark field (ADF), which integrates the intensity on a detector covering an annular range outside the directly transmitted beam &ndash; meaning it detects scattered electrons.
+This method gives easily interpretable images where the detected intensity is roughly proportional to $Z^2$, where $Z$ is the atomic number [@https://doi.org/dssjrs].
+However, the collection efficiency of ADF is poor and the $Z^2$ dependence of the intensity complicates imaging of lighter elements together with heavier ones [@10.1016/j.ultramic.2006.03.007].
+A solution is to place a detector in the bright field (BF) region and collect the direct beam and its interference with scattered beams.
+However this complicates the interpretation of the images, necessitating computational techniques to extract useful information from the measured data.
 
 ## Phase Retrieval Methods
 
@@ -22,6 +30,7 @@ Solving this iteratively, in a family of techniques under the umbrella of iterat
 
 ## Article Outline
 
+Multiple different methods may be used to extract information from such detector datasets, each with its own usecases and limitations.
 In this work, we investigate the efficacy of STEM phase retrieval methods to transfer phase information, as a function of the imaging system properties and experimental parameters, using a combination of analytical and numerical analyses and interactive widgets.
 
 The manuscript is structured as follows:
