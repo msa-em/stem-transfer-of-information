@@ -5,12 +5,14 @@ numbering:
 label : introduction_page
 ---
 
+
+
 ## Phase Retrieval Methods
 
 When a converged electron probe passes through a thin sample, the electron wavefunction is modulated in both phase and amplitude.
-Most of the sample information we are typically interested in, is encoded in the phase of the electron wavefunction.
+Most of the sample information we are typically interested in is encoded in the phase of the electron wavefunction.
 However, this information is "lost" during intensity measurements using physical detectors &ndash; giving rise to the so-called "phase problem" [@10.1080/713819083; @10.1364/AO.21.002758].
-This is further exacerbated for weakly-scattering samples, such as soft or biological materials, which exhibit negligible amplitude contrast.
+This problem is especially apparent in weakly-scattering samples, such as soft or biological materials, which exhibit negligible amplitude contrast.
 To remedy this, a number of phase-retrieval techniques have been developed to computationally reconstruct this phase information from intensity measurements.
 
 The simplest such technique is the integrated center of mass (iCOM) method [@dekkers_differential_1974; @lazic_phase_2016], which recovers the projected sample phase by integrating an estimate of the scattered probe COM.
