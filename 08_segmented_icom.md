@@ -2,17 +2,13 @@
 title: Integrated Center of Mass Imaging with a Segmented Detector
 short_title: Segmented iCOM
 numbering:
-  enumerator: 7.%s
+  enumerator: 8.%s
 label : segmented_icom_page
 ---
 
-So far we have discussed the CTF of phase retrieval techniques when detailed 2D images of the diffraction patterns are recorded with a pixelated detector.
-However, pixelated detectors limit the achievable scan speed in experiments due to slow read-out times typically on the order of tens of μs [@10.1093/mictod/qaad005; @bekkevold_ultra-fast_2024].
-For comparison, traditional HAADF imaging is commonly acquired with dwell times as low as $1 - 5$ μs, or even as fast as $< 100$ ns when multi-frame acquisitions are obtained to observe dynamic effects [@10.1093/jmicro/dfp052;@10.1093/jmicro/dfaa017].
-To realize such sub-$10$ μs dwell times for phase retrieval techniques, we need to look to detectors with a minimal read-out overhead limiting the scan speed, which are still able to retrieve the desired phase information.
-One candidate for such detectors are few-pixel segmented detectors, which are already in widespread use for both iCOM and OBF imaging.
-
-In the following we investigate the impact of detector segmentation on the CTF of phase retrieval techniques iCOM, SSB, tcBF, and iterative ptychography, starting here with iCOM.
+One of the simplest ways to use the signal from a classical four-segmented detector is estimating the COM of the BF disk by subtracting opposing detector segments.
+It was shown over a decade ago that this enables imaging of single atomic columns [@10.1038/nphys2337].
+However, segmented detectors of other geometries may be realized as well, and the CTF framework lends itself well to investigating the information transfer dependency on the detector geometry.
 
 ## Analytical Segmented COM CTF
 
