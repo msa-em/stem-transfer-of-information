@@ -22,7 +22,7 @@ project:
   open_access: true
   license: CC-BY-4.0
   banner: banner.png
-  thumbnail: thumbnail.webp
+  thumbnail: thumbnail.png
   date: 2025-05-14
   venue:
     title: Elemental Microscopy
