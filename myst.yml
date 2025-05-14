@@ -23,11 +23,13 @@ project:
   license: CC-BY-4.0
   banner: banner.png
   thumbnail: thumbnail.webp
-  date: 2025-05-04
+  date: 2025-05-14
+  venue:
+    title: Elemental Microscopy
+    short_title: EM
   requirements:
     - 'Dockerfile'
     - requirements.in
-#    - 'environment.yml'
   resources:
     - 'notebooks/**/*'
   references:
@@ -60,7 +62,7 @@ project:
         - Writing - original draft
         - Writing - review & editing
     - id: steph
-      name: Stephanie Ribet
+      name: Stephanie M Ribet
       orcid: 0000-0002-7117-066X
       affiliations:
         - id: ncem
@@ -182,6 +184,7 @@ project:
     SNR: signal-to-noise ratio
     SSNR: spectral signal-to-noise ratio
     DQE: detector quantum efficiency
+    WPOA: weak phase object approximation
   toc:
     - file: 00_index.md
     - file: 01_introduction.md
