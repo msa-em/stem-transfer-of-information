@@ -1,6 +1,7 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
+  doi: 10.69761/ehch7395
   id: msa-em-stem-transfer-of-information-1
   title: Evaluating the Transfer of Information in Phase Retrieval STEM Techniques
   short_title: Transfer of Information in Phase Retrieval STEM
@@ -27,6 +28,7 @@ project:
   venue:
     title: Elemental Microscopy
     short_title: EM
+    doi: 10.69761/EM
   requirements:
     - 'Dockerfile'
     - requirements.in
@@ -165,7 +167,7 @@ project:
     HRTEM: high resolution transmission electron microscopy
     4D-STEM: four dimensional scanning transmission electron microscopy
     4DSTEM: four dimensional scanning transmission electron microscopy
-    CBED: convergent beam electron diffraction 
+    CBED: convergent beam electron diffraction
     FFT: fast Fourier transform
     HAADF: high angle annular dark field
     ADF: annular dark field
@@ -191,15 +193,15 @@ project:
     - file: 02_analytical_ingredients.md
     - title: Pixelated Detector CTF
       children:
-        - pattern: "*pixelated*.md"
+        - pattern: '*pixelated*.md'
     - title: Segmented Detector CTF
       children:
-        - pattern: "*segmented*.md"
+        - pattern: '*segmented*.md'
     - file: 12_upsampled_ssb.md
     - file: 13_spectral_signal_to_noise.md
     - file: 14_conclusions.md
     - title: Notebooks
       children:
-        - pattern: "notebooks/[0-9]*.ipynb"
+        - pattern: 'notebooks/[0-9]*.ipynb'
 site:
   template: book-theme
